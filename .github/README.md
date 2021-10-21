@@ -1,5 +1,3 @@
-# ArminC-UTM-Info
-
 <h1 align="center">
   <br>
   <a href="https://github.com/ArmynC/ArminC-UTM-Info/archive/refs/heads/main.zip"><img src="https://raw.githubusercontent.com/ArmynC/ArminC-UTM-Info/main/sigla.png" alt="UTM"></a>
