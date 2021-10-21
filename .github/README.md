@@ -6,5 +6,5 @@
 <h4 align="center">Resurse Universitatea Titu Maiorescu - Facultatea de Informatica.</h4>
 
 
-## Licenta
+#### Licenta
 [CC0 1.0](https://tldrlegal.com/license/creative-commons-cc0-1.0-universal)
