@@ -1,0 +1,70 @@
+<-> Definirea sistemului de operare
+
+Gestioneaza resursele sistemului de calcul si realizeaza inerfata dintre masina fizica si utilizator.
+
+-> Resurse: Memoria, CPU, HDD, comunicarea in retea si dispozitive intrare-iesire.
+
+Portabilitatea este o functie a sistemului de operare care consta in oferirea unei interfete unice 
+pentru utilizator indiferent de diferentele hardware dintre arhitecturi.
+
+Driverele sunt niste programe care traduc comenzile sistemului de operare in comenzi pe
+intelesul echipamentelor.
+
+ <> Functionarea sistemului de operare
+ 
+  > Rolul sau in gestiunea/administrarea:
+  
+  a. CPU
+  b. Memoriei
+  c. Echipamentelor periferice
+  d. Sistemelor de stocare a datelor (fisierelor)
+  
+  Notiunea de multi-tasking consta in posibilitatea de a functiona simultan mai multe aplicatii.
+  
+  Un proces este un program care executa o actiune si este controlat de catre sistemul de operare, de 
+  catre o aplicatie sau de catre un utilizator.
+  
+  Time sharing - fiecarui proces i se aloca o cuanta de timp egala in care are voie sa detina
+  resursa procesorului.
+  
+
+  Prin gestiunea memoriei se urmareste ca fiecarui proces sa i se atribuie suficienta memoriei
+  fara sa acceseze spatiul de memorie al altor procese.
+
+  Interfata cu aplicatiile permite aplicatiilor sa acceseze resursele hardware ale sistemului
+  iar interfata cu utilizatorul permite acestuia sa comunice cu utilizatorul, fie in modul GUI
+  fie in modul TXT.
+  
+<-> Sistemele de operare moderne 
+
+Sisteme de operare pentru:
+
+Desktop - Windows, Linux, Mac etc.
+Serverere - distrouri Linux/Unix specializate
+Sisteme mobile - Android, IOS
+Sisteme in timp real - implementate in locuri in care raspunsul imediat este esential (ex. fabrici, transport)
+
+  > Notiuni de baza Linux/Unix:
+  
+  Un sistem de operare este Unix daca respecta standardul single unix specification, care este un standard
+  de baza comun. Din aceastea familie face parte Linux, Solaris, BSD etc.
+  
+  Proiectele open-source sunt proiecte la care fiecare poate sa adauge imbunatatiri.
+  
+  Linux are mai multe distributii, un meniu grafic, aplicatii suplimentare, kernel optimizat...
+  
+<-> Virtualizare si emulare
+
+Emulatorul foloseste resursele sistemului gazda traducand comenzile sistemului emulat.
+
+O masina virtuala este o aplicatie care creeaza un mediu pentru rularea unui nou sistem de operare folosind
+resursele gestionate de sistemul de operare gazda prin intermediul mecanismelor oferite de masina virtuala.
+
+Hypervisorul este un manager de masini virtuale care permite mai multor sisteme de operare 
+sa foloseasca resursele hardware ale unei singure gazde.
+
+Avantajele virtualizarii:
+
+- posibilitatea rularii a mai multor sisteme de operare
+- securizarea aplicatiilor
+- medii de executie cu limitari asupra resurselor impuse

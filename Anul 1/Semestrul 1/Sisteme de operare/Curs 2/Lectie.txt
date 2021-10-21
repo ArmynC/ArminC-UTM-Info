@@ -1,0 +1,54 @@
+<*>
+
+O distributie reprezinta o colectie de programe adaptate pentru fiecare distributie in parte, care
+sunt combinate cu un kernel, pentu a crea un sistem de operare. Cea mai cunoscuta este Ubuntu.
+
+O distributie poate sa ofere un grad de noutate, o stabilitate, in functie de care se poateface
+o clasificare:
+
+    > Versiunile stabile (servere) ofera o securitate mare si sunt putine pentru ca 
+necesita timp indelungat de testare.
+
+    > Versiunile instabile, ofera facilitati mai noi.
+
+<*>
+
+Atunci cand intreaga memorie RAM este umpluta cu date, o parte din aceasta va fi stocata
+intr-o memorie speciala care face parte din memoria externa (ex. hard disk) si care se comporta
+ca memorie interna printr-un procedeu numit swaping.
+
+Sistemele de operare Linux folosesc pentru aceasta, o zona dedicata de pe hard disk numita
+partitie de swap.
+
+O partitie este o diviziune logica a unui hard disk. Prin partitionare hard diskului se va comporta
+ca mai multe hard diskuri independente.
+
+GPT - informatii despre fiecare partitie.
+
+<*>
+
+Sistemele de operare Linux au 3 lucruri de baza:
+
+ - Kernelul (nucleul) este primul incarcat la pornirea sistemului de operare si realizeaza gestiunea
+ resurselor calculatorului si rularea paralela a mai multor aplicatii.
+ - Shellul reprezinta interpretorul de comenzi - interfata dintre comenzi si utilizator.
+ - Sistemul de fisiere este ansamblul de reguli dupa care fisierele sunt numite, stocate si organizate.
+ 
+Interfata grafica in Linux este compusa din:
+
+ - Server grafic - este aplicatia care dispune de diferite drivere.
+ - Windows manager - controleaza plasarea si aspectul ferestrelor.
+ - Mediu de lucru pentru desktop - toate aplicatiile grafice de care utilizatorul are nevoie ca sa isi foloseasca computerul.
+
+<*>
+
+Spre deosebire de Linux, locul optiunilor este intre comanda si argumentele acestora.
+
+Daca se doreste cautarea de informatii in legatura cu o comanda (parametrii, functii, date de iesire), distributiile
+de Linux pun la dispozitie mai multe optiuni:
+
+"comanda --h" -> ofera un sumar al parametrilor posibili pentru acea comanda.
+"comanda" + x2 TAB -> autocompletare comenzi.
+"help" -> listeaza toate comenzile disponibile.
+"man comanda" -> informatii detaliate despre comanda.
+"whatis comanda" -> doar descrierea comenzii.
