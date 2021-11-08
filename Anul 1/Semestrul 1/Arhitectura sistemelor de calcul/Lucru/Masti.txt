@@ -1,0 +1,31 @@
+! volatile byte NIS_GATE = {x, x, busy, close, open, x, off, x}
+
+1. Testam ON / OFF
+    Mask_OFF = {0, 0, 0, 0, 0, 0, 1 , 0}
+
+    if (NIS_GATE & Mask_OFF) {0, 0, 0, 0, 0, 0, 1/0, 0}
+    True - OFF = 1
+    False - OFF = 0
+
+2. Daca e ON -> e BUSY ?
+    Mask_BUSY = {0, 0, 1, 0, 0, 0, 0 , 0}
+
+    if (NIS_GATE & Mask_BUSY) {0, 0, 1/0, 0, 0, 0, 0, 0}
+    True - BUSY = 1
+    False - BUSY = 0
+
+3. Daca nu e BUSY ->
+
+    a) e OPEN ?
+    Mask_OPEN = {0, 0, 0, 0, 1, 0, 0, 0}
+
+    if (NIS_GATE & Mask_OPEN) {0, 0, 0, 0, 1/0, 0, 0, 0}
+    True - OPEN = 1
+    False - OPEN = 0
+
+    b) e CLOSE ?
+    Mask_CLOSE = {0, 0, 0, 1, 0, 0, 0, 0}
+
+    if (NIS_GATE & Mask_CLOSE) {0, 0, 0, 1/0, 0, 0, 0, 0}
+    True - CLOSE = 1
+    False - CLOSE = 0
