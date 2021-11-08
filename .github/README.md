@@ -6,9 +6,9 @@
 <h4 align="center">Resurse Universitatea Titu Maiorescu - Facultatea de Informatica.</h4>
 <br>
 
-### Lista cu alte materiale aditionale:
+#### Lista cu alte materiale aditionale:
 
 [Carte - sisteme de operare](https://github.com/systems-cs-pub-ro/carte-uso/releases)
 
-#### Licenta
+##### Licenta
 [CC0 1.0](https://tldrlegal.com/license/creative-commons-cc0-1.0-universal)
