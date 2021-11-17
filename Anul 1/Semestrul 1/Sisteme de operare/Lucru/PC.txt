@@ -1,0 +1,22 @@
+Model PC - 
+
+* CPU: AMD Ryzen 5 5600X
+Numar nuclee: 6 (citesc si executa instructiuni)
+Numar threaduri: 12 (nuclee virtuale)
+Frecventa implicita: 3.7 Ghz
+Consum implicit: 65W
+
+* RAM: 8x2 DDR4 3200Mhz CL16
+
+* GPU: RX 6700 XT
+
+* Motherboard: B550 Asus Strix
+Suport M.2, PCIe 4; 2.5GB Ethernet; S1220A Audio; 12+2 Power Stage
+
+* SSD: ADATA S50
+PCIe 4, M.2, Read/Write: 3900/3200, MTBF: 2.000.000
+
+* Case: Cooler Master H500
+
+* PSU: Seasonic Focus Plus 650W
+Modulara, multiple protectii active
