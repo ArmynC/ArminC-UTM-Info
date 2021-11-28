@@ -8,7 +8,13 @@
 
 #### Lista cu alte materiale aditionale:
 
-[Carte - sisteme de operare](https://github.com/systems-cs-pub-ro/carte-uso/releases)
+###### Sisteme de operare
+[Carte](https://github.com/systems-cs-pub-ro/carte-uso/releases)
+
+###### Arhitectura sistemelor de calcul
+[Assembly Programming Tutorial](https://www.tutorialspoint.com/assembly_programming/index.htm)
+
+[DOS Interrupts](http://spike.scu.edu.au/~barry/interrupts.html)
 
 ##### Licenta
 [CC0 1.0](https://tldrlegal.com/license/creative-commons-cc0-1.0-universal)
