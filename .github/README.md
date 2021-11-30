@@ -14,7 +14,7 @@
 ###### Arhitectura sistemelor de calcul
 [Assembly Programming Tutorial](https://www.tutorialspoint.com/assembly_programming/index.htm)
 
-[DOS Interrupts](http://spike.scu.edu.au/~barry/interrupts.html)
+[8086 assembler tutorials](https://web.archive.org/web/20210423020908/https://jbwyatt.com/253/emu/)
 
 ##### Licenta
 [CC0 1.0](https://tldrlegal.com/license/creative-commons-cc0-1.0-universal)
