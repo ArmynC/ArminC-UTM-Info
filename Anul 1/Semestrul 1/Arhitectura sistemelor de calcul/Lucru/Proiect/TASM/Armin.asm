@@ -33,7 +33,7 @@
 	mov v2[4], al                     ; Vectorul v2[4] = al
 
 	mov al, v2[4]                     ; Registrului al i se copiaza vectorul v2[4]
-	add al, a3                        ; Registrului al i se aduna registrul a2
+	add al, a3                        ; Registrului al i se aduna registrul a3
 	mov v2[5], al                     ; Vectorul v2[5] = al
 
 	mov di,5                          ; di = 5 (final sir)
@@ -51,7 +51,7 @@ conversie:                            ; Subprogram
 
 	div divizor				          ; Numarul curent din registrul ax este impartit la divizor (10)
 	
-	add ah, '0'                       ; Registrului ah i se aduna valoarea 0
+	add ah, '0'                       ; Registrului ah i se aduna caracterului '0' valoarea cifrei
 	mov sir[di], ah                   ; Sirului i se copiaza registrul ah
 
 	cmp al, 0				          ; Compara registrul al (catul) cu valoarea 0
@@ -60,7 +60,7 @@ conversie:                            ; Subprogram
 	dec si                            ; Registrul si (vector) este micsorat cu 1
 
 	cmp si, 2                         ; Compara registrul si (sirul) cu valoarea 2
-	jne vector                        ; Daca indicele vectorului (si) nu este mai mic decat 3, reia operatia 
+	jne vector                        ; Daca indicele vectorului (si) nu este mai mic decat 3, reia operatia
 
 listn:                                ; Subprogram
 	mov ah, 09h                       ; Operatie de scriere a sirului curent in output
