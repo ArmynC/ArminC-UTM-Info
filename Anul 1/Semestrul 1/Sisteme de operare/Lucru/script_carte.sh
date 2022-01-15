@@ -4,6 +4,42 @@
 iesire() { clear; echo "> Inchidere..."; exit 0; }
 eroare() { clear; echo "> Optiune invalida."; meniulprincipal; }
 
+c13() {
+    echo -ne "
+------------
+CAPITOLUL 13
+------------
+1) service
+2) kcalc
+
+m) Meniul principal
+0) Iesire
+
+Introdu optiunea> "
+    read optiuni
+    case $optiuni in
+    1)
+        clear
+        service --status-all
+        c13
+        ;;
+    2)
+        clear
+        kcalc
+        c13
+        ;;
+    m)
+	    clear
+        meniulprincipal
+        ;;
+    0)
+        iesire
+        ;;
+    *)
+        eroare
+        ;;
+    esac
+}
 
 c12() {
     echo -ne "
@@ -12,10 +48,13 @@ CAPITOLUL 12
 ------------
 1) echo
 2) variabila + echo
+3) printf
+4) time
 
 m) Meniul principal
 0) Iesire
-Choose an option:  "
+
+Introdu optiunea> "
     read optiuni
     case $optiuni in
     1)
@@ -26,9 +65,20 @@ Choose an option:  "
     2)
         clear
         autor=ArminC
-        echo "Compus de $autor"
+        echo "^_^ $autor"
         c12
         ;;
+    3)
+        clear
+        printf "abdullah abdullah"
+        c12
+        ;;
+    4)
+        clear
+        time
+        c12
+        ;;
+
     m)
 	    clear
         meniulprincipal
@@ -54,10 +104,12 @@ CAPITOLUL 10
 5) df
 6) who
 7) last
+8) passwd
 
 m) Meniul principal
 0) Iesire
-Choose an option:  "
+
+Introdu optiunea> "
     read optiuni
     case $optiuni in
     1)
@@ -95,6 +147,11 @@ Choose an option:  "
 		last
 		c10
 		;;
+    8)
+		clear
+		passwd
+		c10
+		;;
     m)
 	    clear
         meniulprincipal
@@ -117,10 +174,15 @@ CAPITOLUL 9
 1) netstat
 2) telnet
 3) wget
+4) ssh
+5) scp
+6) ftp
+7) curl
 
 m) Meniul principal
 0) Iesire
-Choose an option:  "
+
+Introdu optiunea> "
     read optiuni
     case $optiuni in
     1)
@@ -138,6 +200,27 @@ Choose an option:  "
 		wget https://github.com/ArmynC/ArminC-UTM-Info/raw/main/Anul%201/Semestrul%201/Sisteme%20de%20operare/Introducere%20in%20sisteme%20de%20operare.pdf
 		c9
 		;;
+    4)
+		clear
+		ssh
+		c9
+		;;
+    5)
+		clear
+		scp
+		c9
+		;;
+    6)
+		clear
+		ftp
+		c9
+		;;
+    7)
+		clear
+		curl github.com/armync
+		c9
+		;;
+
     m)
 	    clear
         meniulprincipal
@@ -159,11 +242,13 @@ CAPITOLUL 8
 1) ipconfig
 2) route
 3) hostname
-4) ping
+4) host
+5) ping
 
 m) Meniul principal
 0) Iesire
-Choose an option:  "
+
+Introdu optiunea> "
     read optiuni
     case $optiuni in
     1)
@@ -181,9 +266,14 @@ Choose an option:  "
 		hostname
 		c8
 		;;
-	4)
+    4)
 		clear
-		ping www.github.com/armync
+		host utm.ro
+		c8
+		;;
+	5)
+		clear
+		ping github.com/armync
 		c8
 		;;
     m)
@@ -216,7 +306,8 @@ CAPITOLUL 7
 
 m) Meniul principal
 0) Iesire
-Choose an option:  "
+
+Introdu optiunea> "
     read optiuni
     case $optiuni in
     1)
@@ -280,10 +371,14 @@ CAPITOLUL 6
 1) runlevel
 2) init
 3) grub
+4) file
+5) halt
+6) find
 
 m) Meniul principal
 0) Iesire
-Choose an option:  "
+
+Introdu optiunea> "
     read optiuni
     case $optiuni in
     1)
@@ -299,6 +394,21 @@ Choose an option:  "
 	3)
 		clear
 		grub
+		c6
+		;;
+	4)
+		clear
+		file /dev/null
+		c6
+		;;
+    5)
+		clear
+		halt
+		c6
+		;;
+    6)
+		clear
+		find
 		c6
 		;;
     m)
@@ -326,15 +436,18 @@ CAPITOLUL 5
 5) fg
 6) kill
 7) free
+8) top
+
 
 m) Meniul principal
 0) Iesire
-Choose an option:  "
+
+Introdu optiunea> "
     read optiuni
     case $optiuni in
     1)
 		clear
-        pgrep -P l
+        pgrep -u root,daemon
 		c5
         ;;
 	2)
@@ -367,6 +480,11 @@ Choose an option:  "
 		free
 		c5
 		;;
+    8)
+		clear
+		top
+		c5
+		;;
     m)
 	    clear
         meniulprincipal
@@ -397,7 +515,8 @@ CAPITOLUL 4
 
 m) Meniul principal
 0) Iesire
-Choose an option:  "
+
+Introdu optiunea> "
     read optiuni
     case $optiuni in
     1)
@@ -515,11 +634,13 @@ CAPITOLUL 3
 6) deluser *interactiv*
 7) --display
 8) /etc/apt/sources.list
+9) usermod
 
 
 m) Meniul principal
 0) Iesire
-Choose an option:  "
+
+Introdu optiunea> "
     read optiuni
     case $optiuni in
     1)
@@ -559,7 +680,12 @@ Choose an option:  "
 		clear
 		cat /etc/apt/sources.list
 		c3
-		;;	
+		;;
+    9)
+		clear
+		usermod -b arminc
+		c3
+		;;
     m)
 	    clear
         meniulprincipal
@@ -585,12 +711,13 @@ CAPITOLUL 2
 4) apropos
 5) man
 6) shutdown
-7) apt-get update
+7) su
 
 
 m) Meniul principal
 0) Iesire
-Choose an option:  "
+
+Introdu optiunea> "
     read optiuni
     case $optiuni in
     1)
@@ -605,7 +732,7 @@ Choose an option:  "
 		;;
 	3)
 		clear
-		whatis ls
+		whatis ps
 		c2
 		;;
 	4)
@@ -625,7 +752,7 @@ Choose an option:  "
 		;;
 	7)
 		clear
-		apt-get update
+		su
 		c2
 		;;
     m)
@@ -660,12 +787,11 @@ SCRIPT COMENZI CARTE
 9) Capitolul 9
 10) Capitolul 10
 12) Capitolul 12
+13) Captiolul 13
 
 0) Iesire
 
-[ATENTIE] Mod super utilizator (administrator) recomandat !
-
-Introdu optiunea:  "
+Introdu optiunea> "
 	
 	# Citeste valoarea pentru 'optiuni'
     read optiuni
@@ -708,6 +834,11 @@ Introdu optiunea:  "
 		clear
 		c12
 		;;
+    13)
+        clear
+        c13
+        ;;
+
     0)
         iesire
         ;;
@@ -717,5 +848,13 @@ Introdu optiunea:  "
     esac
 }
 
-# Initializare
-meniulprincipal
+# Verificare mod super utilizator
+if [[ $(id -un) == 'root'  ]]; then
+    clear
+    meniulprincipal # Initializare meniu
+else
+    clear
+    echo "[ATENTIE] Mod super utilizator (admin) recomandat !"
+    sleep 2
+    meniulprincipal
+fi
