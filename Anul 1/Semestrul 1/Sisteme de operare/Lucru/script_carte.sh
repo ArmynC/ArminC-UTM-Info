@@ -273,7 +273,7 @@ Introdu optiunea> "
 		;;
 	5)
 		clear
-		ping github.com/armync
+		ping google.com
 		c8
 		;;
     m)
