@@ -744,7 +744,7 @@ Introdu optiunea> "
 		;;
 	5)
 		clear
-		man ls
+		man whatis
 		c2
 		;;
 	6) 
