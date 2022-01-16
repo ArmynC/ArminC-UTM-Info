@@ -70,7 +70,9 @@ Introdu optiunea> "
         ;;
     3)
         clear
-        printf "abdullah abdullah"
+        # ascii encrypted art
+        base64 -d <<< "H4sIAAAAAAAA/9PVRQHaqFxdLgU4iI+PV9CPi4sG0SggHqFIvyYObII2kF2jHI8A+vowRRoKQNkakFgN1FQggNgNV6NgawvXqaurjmxZDJKL6uJB5gAxAJguw0HFAAAA" | gunzip
+        printf "\n \n helikopter helikopter"
         c12
         ;;
     4)
