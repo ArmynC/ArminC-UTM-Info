@@ -6,15 +6,25 @@
 <h4 align="center">Resurse Universitatea Titu Maiorescu - Facultatea de Informatica.</h4>
 <br>
 
-#### Lista cu alte materiale aditionale:
+### Cuprins:
+<br>
 
-###### Sisteme de operare
-[Carte](https://github.com/systems-cs-pub-ro/carte-uso/releases)
+**Anul 1**
+---
 
-###### Arhitectura sistemelor de calcul
-[Assembly Programming Tutorial](https://www.tutorialspoint.com/assembly_programming/index.htm)
+#### Semestrul I
 
-[8086 assembler tutorials](https://web.archive.org/web/20210423020908/https://jbwyatt.com/253/emu/)
+* [Arhitectura sistemelor de calcul](https://github.com/ArmynC/ArminC-UTM-Info/tree/main/Anul%201/Semestrul%20I/Arhitectura%20sistemelor%20de%20calcul) - **x86 ASM**
+* [Calcul diferential si integral](https://github.com/ArmynC/ArminC-UTM-Info/tree/main/Anul%201/Semestrul%20I/Calcul%20diferential%20si%20integral) - **mate**
+* [Comunicare de specialitate in limba engleza](https://github.com/ArmynC/ArminC-UTM-Info/tree/main/Anul%201/Semestrul%20I/Comunicare%20de%20specialitate%20in%20limba%20engleza)
+* [Educatie fizica](https://github.com/ArmynC/ArminC-UTM-Info/tree/main/Anul%201/Semestrul%20I/Educatie%20fizica)
+* [Fundamentele programarii](https://github.com/ArmynC/ArminC-UTM-Info/tree/main/Anul%201/Semestrul%20I/Fundamentele%20programarii) - **C**
+* [Logica matematica si computationala](https://github.com/ArmynC/ArminC-UTM-Info/tree/main/Anul%201/Semestrul%20I/Logica%20matematica%20si%20computationala)
+* [Sisteme de operare](https://github.com/ArmynC/ArminC-UTM-Info/tree/main/Anul%201/Semestrul%20I/Sisteme%20de%20operare) - **BASH**
+
+#### Semestrul 2
+
+* ...
 
 ##### Licenta
 [CC0 1.0](https://tldrlegal.com/license/creative-commons-cc0-1.0-universal)
