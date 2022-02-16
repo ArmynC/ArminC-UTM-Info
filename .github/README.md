@@ -6,9 +6,6 @@
 <h4 align="center">Resurse Universitatea Titu Maiorescu - Facultatea de Informatica.</h4>
 <br>
 
-### Cuprins:
-<br>
-
 **Anul 1**
 ---
 
