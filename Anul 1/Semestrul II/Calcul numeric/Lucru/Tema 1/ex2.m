@@ -5,8 +5,10 @@ function rez = f(x)
 end
 
 y = 0.6;
+
 eps = 0.01;
-max = 6; %Maximul iteratiilor
+
+max = 20; %Maximul iteratiilor
 
 iteratie = 1
 
@@ -14,7 +16,7 @@ z = (x*f(y) - y*f(x)) / (f(y) - f(x))
 
 dif_abs = abs(z-y)
 
-while and(dif_abs > eps, i < max)
+while and(dif_abs > eps, iteratie < max)
     iteratie = iteratie + 1
     x = y
     y = z

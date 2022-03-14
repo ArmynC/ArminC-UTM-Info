@@ -10,7 +10,8 @@ function rez = g(x)
 end
 
 eps = 0.01;
-max = 6; %Maximul iteratiilor
+
+max = 20; %Maximul iteratiilor
 
 iteratie = 1
 
