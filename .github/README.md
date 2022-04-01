@@ -21,7 +21,14 @@
 
 #### Semestrul 2
 
-* ...
+* [Algoritmica grafurilor](https://github.com/ArmynC/ArminC-UTM-Info/tree/main/Anul%201/Semestrul%20II/Algoritmica%20grafurilor) - **C/C++**
+* [Calcul numeric](https://github.com/ArmynC/ArminC-UTM-Info/tree/main/Anul%201/Semestrul%20II/Calcul%20numeric) - **MatLab/Octave**
+* [Comunicare de specialitate in limba engleza](https://github.com/ArmynC/ArminC-UTM-Info/tree/main/Anul%201/Semestrul%20II/Comunicare%20de%20specialitate%20in%20limba%20engleza) 
+* [Dezvoltarea aplicatiilor web](https://github.com/ArmynC/ArminC-UTM-Info/tree/main/Anul%201/Semestrul%20II/Dezvoltarea%20aplicatiilor%20web) **HTML**
+* [Educatie fizica](https://github.com/ArmynC/ArminC-UTM-Info/tree/main/Anul%201/Semestrul%20II/Educatie%20fizica)
+* [Fundamentele algebrice ale informaticii](https://github.com/ArmynC/ArminC-UTM-Info/tree/main/Anul%201/Semestrul%20II/Fundamentele%20algebrice%20ale%20informaticii) - **C/mate**
+* [Programare procedurala](https://github.com/ArmynC/ArminC-UTM-Info/tree/main/Anul%201/Semestrul%20II/Programare%20procedurala) - **C**
+* [Redactare si comunicarea stiintifica profesionala](https://github.com/ArmynC/ArminC-UTM-Info/tree/main/Anul%201/Semestrul%20II/Redactare%20si%20comunicarea%20stiintifica%20profesionala)
 
 ##### Licenta
-[CC0 1.0](https://tldrlegal.com/license/creative-commons-cc0-1.0-universal)
+[CC0 1.0](https://tldrlegal.com/license/creative-commons-cc0-1.0-universal) - daca nu se specifica altfel.
