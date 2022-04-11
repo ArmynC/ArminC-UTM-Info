@@ -1,0 +1,48 @@
+**** (4) ****
+
+-> 
+
+In '71 a scientist created an experimental program named Creeper that moved across mainframe computers.
+
+The same year, one of his co-workers, wrote an upgraded version of Creeper, which replcated istelf as it moved across the entire network.
+To remove it, he wrote a program named Reaper, which moved across the network, detected and removed the Creeper program.
+
+->
+
+John McAfee’s computer was one of the computers infected with the "Brain" virus. He knew how to remove this virus but most people didn’t. So, he started travelling around the country and fixing computer problems. After some time, he decided to automate this process by making a software. 
+
+**** (5) ****
+
+->
+
+Ransomware uses encryption on the computer's files until a ransom is paid and the decryption key is given. There is no guarantee that payment will indeed result in the unlock of the computer.
+
+->
+
+Spyware, also keyloggers, collects information about users’ activities without their knowledge or consent. This can include passwords, pins, payment information and unstructured messages.
+
+->
+
+Adware tracks a user’s surfing activity to determine which ads to serve them. It does not install any software on a user’s computer.
+That information can be shared or sold without the user’s consent.
+
+->
+
+A Trojan disguises itself as good code or software. Once downloaded, the Trojan can take control of victims’ systems for malicious purposes. 
+Trojans may hide in games, apps, software patches, or they may be embedded in attachments included in emails.
+In comparison to simple viruses, Trojans can execute or reproduce even if the app isn't running. It just needs to be downloaded.
+
+->
+
+A rootkit gives remote control of a victim’s computer with full access. Rootkits can be injected into applications, kernels, hypervisors, or firmware.
+
+**** (7) ****
+
+-> 
+
+
+Artificial Intelligence (AI) refers to programs and machines that execute tasks with the characteristics of human intelligence, including problem-solving, forward planning, and learning. Broadly speaking, machines that can do human tasks in a what, perhaps considered, "intelligent" way.
+
+Machine Learning (ML) refers to a spectrum of AI technologies focusing on the idea that machines with data access and the correct programming can learn for themselves.
+
+Machine learning in antivirus technologies isn't new. It is getting more intelligent, and is easier to use as a marketing tool now that the wider public is more aware of ML and AI.
