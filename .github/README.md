@@ -30,5 +30,9 @@
 * [Programare procedurala](https://github.com/ArmynC/ArminC-UTM-Info/tree/main/Anul%201/Semestrul%20II/Programare%20procedurala) - **C**
 * [Redactare si comunicarea stiintifica profesionala](https://github.com/ArmynC/ArminC-UTM-Info/tree/main/Anul%201/Semestrul%20II/Redactare%20si%20comunicarea%20stiintifica%20profesionala)
 
+##### Suplimentar
+[Universitatea Bucuresti](https://github.com/DLarisa/FMI-Materials-BachelorDegree-UniBuc)
+[Open Source Society University](https://github.com/ossu/computer-science)
+
 ##### Licenta
 [CC0 1.0](https://tldrlegal.com/license/creative-commons-cc0-1.0-universal) - daca nu se specifica altfel.
