@@ -38,4 +38,4 @@
 ##### Licenta
 [CC0 1.0](https://tldrlegal.com/license/creative-commons-cc0-1.0-universal) - daca nu se specifica altfel.
 
-> Multumiri aditionale pentru toti cei care au contribuit indirect cu resursele.
+###### Multumiri aditionale pentru toti cei care au contribuit indirect cu resursele.
