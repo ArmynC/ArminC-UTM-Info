@@ -32,7 +32,10 @@
 
 ##### Suplimentar
 [Universitatea Bucuresti](https://github.com/DLarisa/FMI-Materials-BachelorDegree-UniBuc)
+
 [Open Source Society University](https://github.com/ossu/computer-science)
 
 ##### Licenta
 [CC0 1.0](https://tldrlegal.com/license/creative-commons-cc0-1.0-universal) - daca nu se specifica altfel.
+
+> Multumiri aditionale pentru toti cei care au contribuit indirect cu resursele.
