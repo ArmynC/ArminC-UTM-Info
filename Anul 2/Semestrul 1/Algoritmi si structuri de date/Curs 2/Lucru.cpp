@@ -1,144 +1,148 @@
 #include <iostream>
-
 using namespace std;
 
-struct Nod {
-	int info;
-	Nod* link;
-};
+const int N = 100;
+int n;
+int lista[N];
 
-Nod* HEAD = NULL;
+void introducere() {
+	cout << "Introduceti valoarea elementului pe care doriti sa il introduceti" << endl;
+	int poz, k;
 
-void inserare_inceput(int a) {
-	Nod* p = new Nod;
-	if (p == NULL) {
-		cout << "OVERFLOW";
-		return;
-	}
-	p->info = a;
-	p->link = HEAD;
-	HEAD = p;
+	cin >> k;
 
-}
+	cout << endl << " si pozitia acestuia";
 
-void inserare_sfarsit(int a) {
-	Nod* p = new Nod;
-	if (p == NULL) {
-		cout << "OVERFLOW";
-		return;
-	}
-	p->info = a;
-	p->link = NULL;
-	Nod* iter = HEAD;
+	cin >> poz;
 
-	while (iter && iter->link)
-		iter = iter->link;
-	if (iter)
-		iter->link = p;
-	else HEAD = p;
-}
-
-void inserare_dupa(int a, Nod* q) {
-	if (q == NULL) {
-		cout << "Elementul dupa nu exista" << endl;
-		return;
-	}
-	Nod* p = new Nod;
-
-	if (p == NULL) {
+	if (n == N) {
 		cout << "OVERFLOW";
 	}
-	p->info = a;
-	p->link = q->link;
-	q->link = p;
-
-}
-
-Nod* accesare(int a) {
-	Nod* iter = HEAD;
-	while (iter && iter->info != a)
-		iter = iter->link;
-	return iter;
-}
-
-void afisare() {
-	Nod* iter = HEAD;
-	while (iter && iter->link) { // echivalent - iter != NULL && iter->link
-		cout << iter->info << "->";
-		iter = iter->link;
+	else if (poz > n || poz < 0) {
+		cout << "Pozitia este invalida";
 	}
-
-	cout << "NULL" << endl;
+	else {
+		for (int i = n - 1; i >= poz - 1; i--) {
+			lista[i + 1] = lista[i];
+		}
+		lista[poz - 1] = k;
+		n++;
+	}
 }
 
-int main()
-{
-	inserare_inceput(9);
-	afisare();
-	inserare_inceput(2);
-	afisare();
-	inserare_inceput(4);
-	afisare();
-	inserare_inceput(5);
-	afisare();
-	inserare_dupa(10, HEAD);
-	afisare();
-	inserare_dupa(12, HEAD->link);
-	afisare();
+void createList() {
+	cout << "Introduceti numarul de elemente: " << endl;
 
-	// testam accesarea
+	cin >> n;
 
-	int a = 2;
+	cout << "Introduceti elementele: " << endl;
+	for (int i = 0; i < n; i++) {
+		cin >> lista[i];
+	}
+}
 
-	Nod* q = accesare(a);
-	if (q == NULL)
-		cout << a << " nu este in lista" << endl;
-	else
-		cout << a << " este in lista la adresa " << q << endl;
+void printList() {
+	for (int i = 0; i < n; i++) {
+		cout << lista[i] << " ";
+	}
+	cout << endl;
+}
 
-	while (1) {
-		int input;
+void stergere() {
+	int poz;
+	cout << endl << "Introduceti pozitia elementului pe care doriti sa il stergeti: ";
 
-		cout << endl;
-		cout << "Selectati operatia: " << endl;
-		cout << " 1. Inserare la inceput" << endl;
-		cout << " 2. Inserare la sfarsit" << endl;
-		cout << " 3. Inserare dupa elemente" << endl;
-		cout << " 4. Accesare" << endl;
-		cout << " 5. Afisare lista" << endl;
-		cout << " 6. Incheiere program" << endl;
+	cin >> poz;
 
-		cin >> input;
+	if (n == 0) {
+		cout << "UNDERFLOW";
+	}
+	else if (n >= 0 || poz < 0) {
+		cout << "Pozitia este invalida";
+	}
+	else {
+		cout << "Valoarea elementului sters este: " << lista[poz] << endl;
 
+		for (int i = poz; i < n - 1; i++) {
+			lista[i] = lista[i + 1];
+		}
+		n--;
+	}
+}
+
+void accesare() {
+	cout << "Introduceti pozitia elementului: ";
+
+	int poz;
+
+	cin >> poz;
+
+	if (poz < 0 || poz >n) {
+		cout << "Pozitie in afara listei";
+	}
+	else {
+		cout << lista[poz];
+	}
+}
+
+void modificare() {
+	cout << "Introduceti pozitia elementului care urmeaza sa fie modificat si noua valoare: ";
+	int poz, newValue;
+
+	cin >> poz >> newValue;
+
+	if (poz < 0 || poz > n) {
+		cout << "Pozitie in afara listei";
+	}
+	else {
+		lista[poz] = newValue;
+
+		cout << lista[poz];
+	}
+}
+
+int main() {
+	int input;
+
+	cout << "Introduceti o comanda: " << endl;
+	cin >> input;
+
+	for (;;) {
 		switch (input) {
+		case -1:
+			exit(0);
 		case 1:
-			cout << "Introduceti valoarea: ";
-			cin >> a;
-			inserare_inceput(a);
+			// Inserare element
+			introducere();
 			break;
 		case 2:
-			cout << "Introduceti valoarea: ";
-			cin >> a;
-			inserare_sfarsit(a);
+			// Stergere element
+			stergere();
 			break;
 		case 3:
-			cout << "Introduceti valoarea: ";
-			cin >> a;
-			inserare_dupa(a, accesare(a));
+			// Accesare element
+			accesare();
 			break;
 		case 4:
-			cout << "Introduceti valoarea: ";
-			cin >> a;
-			accesare(a);
+			// Modificare element
+			modificare();
 			break;
 		case 5:
-			afisare();
+			// Afisare lista
+			printList();
 			break;
 		case 6:
-			exit(0);
+			// Citire lista
+			createList();
 			break;
 		default:
+			cout << "Comanda aleasa nu exista" << endl;
 			break;
 		}
 	}
+
+	cout << "Introduceti alta comanda: " << endl;
+	cin >> input;
+
+	return 0;
 }
