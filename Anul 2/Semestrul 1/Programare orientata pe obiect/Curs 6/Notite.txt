@@ -1,0 +1,77 @@
+Supraincarcarea operatorilor de incrementare/decrementare (++,--)
+
+		-Ei modifica operanzii
+		-La supraincarcarea operatorilor de incrementare sau decrementare se poate diferentia un operator prefixat de unul postfixat folosind doua versiuni ale functiei operator
+
+		Aritate( nr. operanzilor):unar (unul singur):
+			-metoda membra
+					sau 
+			-functie friend
+
+a)
+		metoda membra:
+
+		int x=3;
+		cout << x++; // rezultat 3, x=4
+		cout << ++x; // rezultat 4, x=4
+
+
+
+Implementare operator ++ prefixat prin metoda membra:
+
+		IdClasa&	operator ++ ()
+		{ modificare la datele membre;
+		return this}
+
+		Complex& opertor++()
+		{this->re++;
+		this-> im++;
+		return *this}
+
+
+Implementare operator ++ postfixat prin metoda membra:
+
+		IdClass& operator++()
+				{
+				IdClasa oblocal = this;
+				modificare date membre;
+				return oblocal;
+				}
+
+		Complex operator++(int a)
+				{
+				Complex oblocal=*this;
+				this ->re++;
+				this->im++;
+				return oblocal;
+				}
+
+		Complex ob(1,2);
+		(++ob).afisare(); // rezultat 2 + 3i
+		(ob++).afisare(); // rezultate afisat 1 + 2i
+		//dar daca rulez ob.afisare(); dupa linia precedenta, rezulatul este 2 + 3i
+
+
+Supraincarcarea operatorului de asignare (=)
+
+			-pentru asignarea a doua obiecte de acelasi tip se poate folosi definitia implicita de asignare, prin care se realizeaza copierea la nivel de bit a datelor membre ale obiectului sursa;
+			Complex z1(1,2), z2;
+			z2=z1;// copiere la nivel de bit
+
+			-> operator binar (doi operanzi): t1 = t2
+			-> modifica operandul stanga => pointer this
+		Obs: Nu se paote supraincarca prin friend!!
+
+supraincarcarea operatorului de asignare
+
+Pentru asignarea a doua obiecte de acealasi tip, in limbajul c++ se poate utiliza definitia 
+implicita de asignare, prin care se realizeaza copiere la nivel de bit a datelor membre ale obiectului sursa
+
+
+
+Supraincarcarea operatorului de asignare
+
+Operatorul de asignare = se supraincarca numai prin functie membru!
+
+Pentru clasele cu date alocate dinamic, functia "operator=" 
+

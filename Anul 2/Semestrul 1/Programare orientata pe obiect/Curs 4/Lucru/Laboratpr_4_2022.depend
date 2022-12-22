@@ -1,0 +1,12 @@
+# depslib dependency file v1.0
+1667555137 source:d:\laboratpr_4_2022\automobil.cpp
+	<iostream>
+	<string.h>
+	"Automobil.h"
+
+1667555051 d:\laboratpr_4_2022\automobil.h
+
+1667555151 source:d:\laboratpr_4_2022\main.cpp
+	<iostream>
+	"Automobil.h"
+

@@ -1,0 +1,12 @@
+# depslib dependency file v1.0
+1668761344 source:d:\laborator_fisa_7\main.cpp
+	<iostream>
+	"Farmacie.h"
+
+1668761383 source:d:\laborator_fisa_7\farmacie.cpp
+	<iostream>
+	"Farmacie.h"
+	<string.h>
+
+1668760962 d:\laborator_fisa_7\farmacie.h
+
