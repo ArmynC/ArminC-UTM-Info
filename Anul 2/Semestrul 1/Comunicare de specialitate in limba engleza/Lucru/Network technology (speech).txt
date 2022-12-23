@@ -1,0 +1,49 @@
+1)
+
+By using networking, users can send messages, files through e-mail or other channels based on the their requirements.
+
+Today’s networks tend to be a bit more complex and don’t just consist of two computers. Systems with more than ten participants usually use client-server networks. In these networks, a central computer (server) provides resources to the other participants in the network (clients).
+
+2)
+
+* LAN - this network uses devices like computers, laptops, and mobiles that are connected in a small range which ranges from 100m to 10km.
+
+The main elements of LAN mainly include the following.
+
+    Peripheral devices like printers, scanners, etc.
+
+    Provide the necessary connection between gamers’ computers at LAN parties.
+
+    Cables like twisted pair, optical fiber, and coaxial cables are used due to their high bandwidth capacity.
+
+    Nodes/PC/computer/Host/server/workstation
+
+    Network interface card - NIC
+
+* MAN - A network where numerous LANs are linked through a networking device known as Bridge. These types of networks cover cities or single geographic regions.
+
+* WAN - A network where united through a networking device is known as route.
+
+There are two types of WANs namely public WAN and private WAN.
+
+    Public WAN: Handled through government divisions, and are operated by internet providers so that their customers can access the internet
+    Private WAN:  Expanded by the departments of the US Military, Defence wing known as ARPANET and primarily set up by companies in order to enable cloud services, for example, and connect the networks of different company locations. 
+
+WAN Elements
+
+    By using this gateway, communication between a mobile device containing 4G connection & landline device containing 2G connection.
+
+
+* A PAN is used for interconnecting devices close to a person, within a short range. Examples include Bluetooth technology, Apple’s Airdrop, wireless keyboards, cell phone headsets, printers, bar code scanners, wireless mice & game consoles. This network is mainly used for personal purposes.
+
+-
+
+* Point to Point
+
+In point to point, when sender & receiver (nodes) are connected directly, then the data transmission can be done with the help of a guided medium, used for the wired network and unguided medium, used for the wireless network.
+
+* Multi-point
+
+In multi-point, several nodes are connected directly with the help of a common medium in a linear manner.
+
+This kind of transmission mainly works on any of these two connections like time-sharing otherwise spatially shared. In the first connection, every node is accessible with a separate time of slot to converse, whereas, in the second connection, the communication between the nodes can be done simultaneously at a time.
