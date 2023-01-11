@@ -33,8 +33,8 @@ void display()
 void reshape(int w, int h)
 {
     // actualizeaza dimensiunile ferestrei
-    width = w;
-    height = h;
+    latime = w;
+    inaltime = h;
 
     // reseteaza viewport-ul
     glViewport(0, 0, w, h);
