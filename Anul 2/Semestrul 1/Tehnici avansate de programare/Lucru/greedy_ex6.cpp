@@ -53,5 +53,4 @@ int main()
         cout << stud[i].id << " " << stud[i].t1 << " " << stud[i].t2 << " " << stud[i].t3 <<" "<<timp_total(stud[i]) << endl;
     }
 
-
 }
