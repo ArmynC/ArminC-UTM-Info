@@ -4,9 +4,9 @@
 /*
  * rotirea tintei in functie de tastele apasate
  *
- * @param key - tasta apasata (W, A, S, D)
- * @param x - coordonata x a mouse-ului
- * @param y - coordonata y a mouse-ului
+ * key - tasta apasata (W, A, S, D)
+ * x - coordonata x a mouse-ului
+ * y - coordonata y a mouse-ului
  */
 void rotire(unsigned char key, int x, int y)
 {
