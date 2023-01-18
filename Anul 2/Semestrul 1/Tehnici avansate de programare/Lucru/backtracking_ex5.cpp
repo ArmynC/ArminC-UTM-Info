@@ -95,6 +95,17 @@ void btk_numere(int N, int num, int lg, bool& solutie)
     {
         btk_numere(N, num * 10 + i, lg - 1, solutie);
     }
+
+    /*
+    N: numarul introdus initial de utilizator
+
+    num * 10 + i : num este numarul format pana acum, i este cifra curenta incercata, si prin inmultirea cu 10+i se adauga cifra la numarul format pana acum
+
+    lg - 1 : lg este numarul de cifre ramase pentru a fi adaugate, reduce numarul de cifre ramase cu 1
+    
+    solutie : un bool care indica daca a fost gasita o solutie sau nu
+
+    */
 }
 
 int main()
