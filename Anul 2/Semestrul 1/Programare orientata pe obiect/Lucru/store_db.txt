@@ -1,0 +1,6 @@
+CPU,1,200,Intel Core i5-10600K,2020,3,Intel,USA,10
+GPU,2,400,Nvidia RTX 2080,2019,2,Nvidia,China,5
+Laptop,1001,800,Dell Inspiron,2020,12,Dell,USA,10
+Desktop,1002,1200,HP Pavilion,2021,24,HP,China,5
+Tablet,1003,500,iPad Pro,2019,12,Apple,China,8
+Printer,1004,150,HP OfficeJet Pro,2020,12,HP,USA,20
