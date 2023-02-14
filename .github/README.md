@@ -22,13 +22,29 @@
 #### Semestrul 2
 
 * [Algoritmica grafurilor](https://github.com/ArmynC/ArminC-UTM-Info/tree/main/Anul%201/Semestrul%20II/Algoritmica%20grafurilor) - **C/C++**
-* [Calcul numeric](https://github.com/ArmynC/ArminC-UTM-Info/tree/main/Anul%201/Semestrul%20II/Calcul%20numeric) - **MatLab/Octave**
+* [Calcul numeric](https://github.com/ArmynC/ArminC-UTM-Info/tree/main/Anul%201/Semestrul%20II/Calcul%20numeric) - **MATLAB/Octave**
 * [Comunicare de specialitate in limba engleza](https://github.com/ArmynC/ArminC-UTM-Info/tree/main/Anul%201/Semestrul%20II/Comunicare%20de%20specialitate%20in%20limba%20engleza) 
 * [Dezvoltarea aplicatiilor web](https://github.com/ArmynC/ArminC-UTM-Info/tree/main/Anul%201/Semestrul%20II/Dezvoltarea%20aplicatiilor%20web) **HTML**
 * [Educatie fizica](https://github.com/ArmynC/ArminC-UTM-Info/tree/main/Anul%201/Semestrul%20II/Educatie%20fizica)
 * [Fundamentele algebrice ale informaticii](https://github.com/ArmynC/ArminC-UTM-Info/tree/main/Anul%201/Semestrul%20II/Fundamentele%20algebrice%20ale%20informaticii) - **C/mate**
 * [Programare procedurala](https://github.com/ArmynC/ArminC-UTM-Info/tree/main/Anul%201/Semestrul%20II/Programare%20procedurala) - **C**
 * [Redactare si comunicarea stiintifica profesionala](https://github.com/ArmynC/ArminC-UTM-Info/tree/main/Anul%201/Semestrul%20II/Redactare%20si%20comunicarea%20stiintifica%20profesionala)
+
+**Anul 2**
+---
+
+#### Semestrul I
+
+* [Algoritmi si structuri de date](https://github.com/ArmynC/ArminC-UTM-Info/tree/main/Anul%202/Semestrul%201/Algoritmi%20si%20structuri%20de%20date) - **C++**
+* [Comunicare de specialitate in limba engleza](https://github.com/ArmynC/ArminC-UTM-Info/tree/main/Anul%202/Semestrul%201/Comunicare%20de%20specialitate%20in%20limba%20engleza)
+* [Ecuatii diferentiale si sisteme dinamice](https://github.com/ArmynC/ArminC-UTM-Info/tree/main/Anul%202/Semestrul%201/Ecuatii%20diferentiale%20si%20sisteme%20dinamice) - **mate**
+* [Educatie fizica](https://github.com/ArmynC/ArminC-UTM-Info/tree/main/Anul%202/Semestrul%201/Educatie%20fizica)
+* [Grafica pe calculator](https://github.com/ArmynC/ArminC-UTM-Info/tree/main/Anul%202/Semestrul%201/Grafica%20pe%20calculator) - **Photoshop, freeglut OpenGL, Unity**
+* [Probabilitati si statistica](https://github.com/ArmynC/ArminC-UTM-Info/tree/main/Anul%202/Semestrul%201/Probabilitati%20si%20statistica) - **Excel**
+* [Programare orientata pe obiect](https://github.com/ArmynC/ArminC-UTM-Info/tree/main/Anul%202/Semestrul%201/Programare%20orientata%20pe%20obiect) - **C++**
+* [Tehnici avansate de programare](https://github.com/ArmynC/ArminC-UTM-Info/tree/main/Anul%202/Semestrul%201/Tehnici%20avansate%20de%20programare) - **C++**
+
+#### Semestrul 2
 
 ##### Suplimentar
 [Universitatea Bucuresti](https://github.com/DLarisa/FMI-Materials-BachelorDegree-UniBuc)
