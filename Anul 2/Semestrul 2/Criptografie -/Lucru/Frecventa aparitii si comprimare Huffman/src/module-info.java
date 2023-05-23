@@ -1,0 +1,9 @@
+/**
+ * 
+ */
+/**
+ * @author ArminC
+ *
+ */
+module Cripto {
+}

@@ -1,0 +1,229 @@
+
+--Obs.  Toate exercitiile folosesc B.D. Library
+
+USE Library
+Go
+
+
+--1. FOLOSIRE INSTRUCTIUNE INSERT 
+
+--1.1 Inserare valori in tabela item
+
+Inserati 2 linii in tabela item astfel:
+
+Nume coloana              Valoare
+_______________________________________
+isbn		|	10001 pt. cover HARDBACK
+		|	10101 pt. cover SOFTBACK
+________________________________________________
+title_no	|	8
+________________________________________________
+cover		|	HARDBACK si  SOFTBACK
+________________________________________________
+loanable	|	Y
+________________________________________________
+translation	|	ENGLISH
+________________________________________________
+
+USE Library
+INSERT item(isbn, title_no, cover, loanable, translation)
+VALUES (10001, 8, 'HARDBACK', 'Y', 'ENGLISH')
+
+--si
+
+
+INSERT item(isbn, title_no, cover, loanable, translation)
+VALUES (10101, 8, 'SOFTBACK', 'Y', 'ENGLISH')
+
+GO
+
+--Verificare adaugare:
+select * from item where isbn in(10001,10101)
+
+--1.2 Inserare valori in tabela copy
+
+-- se insereaza linii in tabela copy pt. a reprezenta o carte in colectia
+-- bibliotecii LIBRARY (pt. cea cu coperta HARDBACK)
+
+Nume coloana              Valoare
+_______________________________________
+isbn		|	10101 
+________________________________________________
+copy_no		|	1
+________________________________________________
+title_no	|	8
+________________________________________________
+on_loan		|	N
+________________________________________________
+
+
+--Obs.: Tilul cartii este The Cherry Orchard
+select * from title  where title_no = 8 
+
+INSERT copy(isbn, copy_no, title_no, on_loan)
+VALUES (10101, 1, 8, 'N')
+GO
+
+--1.3 Determinare limbaj de traducere pt. un item
+
+SELECT translation
+FROM item
+WHERE isbn = 10001
+GO
+
+--2.  Folosire instr. INSERT cu cuvantul cheie DEFAULT
+
+-- Se adauga 2 linii in tabela title si se dau date partiale pt. coloane care
+---  permit valori NULL sau au valori DEFAULT
+
+--2.1 Se determina coloanele care permit valori NULL
+-- Nu trebuie date valori pt. coloanele care permit 
+--   valori NULL/valori DEFAULT/au proprietatea IDENTITY
+
+EXEC sp_help title
+
+--2.2 Inserare valori in tabela title
+--Se insereaza cartea: The Art of Lawn Tennis, by William T. Tilden
+--Folositi DEFAULT pt. coloanele cu valori NULL/ au valori DEFAULT
+--Nu se da valoare pt. coloana title_no pt. ca are proprietatea IDENTITY
+
+INSERT  title(title, author, synopsis)
+VALUES('The Art of Lawn Tennis', 'William T. Tilden', DEFAULT)
+
+--2.3 Determinare valoare IDENTITY (ultima)inserata la 2.2
+
+SELECT @@IDENTITY
+
+--2.4 Extragere ultima linie inserata in tabela title (vezi 2.3)
+
+SELECT * FROM title
+WHERE title_no = @@IDENTITY
+
+-- Obs. Vezi valoare camp synopsis (va fi NULL)
+
+--2.5 Inserare inreg. in tabela title ignorand cp. Synopsis (de tip NULL)
+
+INSERT  title(title, author)
+VALUES('Rascoala', 'Liviu Rebreanu')
+
+-- Verificare:
+SELECT * FROM title
+WHERE title = 'Rascoala'
+
+-- Obs. Vezi valoare camp synopsis (va fi NULL)
+
+--3. Folosire instructiune INSERT cu optiunea DEFAULT VALUES
+
+-- se adauga linii unei tabele, fara a da valori
+
+--3.1 Se creaza tabela Client
+
+Nume coloana	Tip	Proprietatea IDENTITY	Allow NULL?
+___________________________________________________________
+ID_client	Int	    Yes (100,5)		 NO
+___________________________________________________________
+Nume	      Char(30)	     NO			 YES
+___________________________________________________________
+
+
+CREATE TABLE Client
+(ID_client int NOT NULL IDENTITY (100,5),
+  Nume char(30) NULL)
+GO
+
+--3.2 Inserare linie cu valori DEFAULT in tabela Client 
+--   (fara a specifica numele coloanelor)
+
+INSERT Client
+DEFAULT VALUES 
+GO
+
+--3.3 Verificare valori inserate la 3.2
+
+SELECT * FROM Client
+-- Se va afisa:
+
+Id_Client	Nume
+_____________________
+ 100		NULL
+
+--4. Instructiunea DELETE
+
+--4.1 4.1 Vizualizare item cu isbn = 10101
+
+SELECT * FROM item
+WHERE isbn = 10001
+
+
+--4.2 Stergeti cartea de la 4.1
+
+DELETE FROM item
+WHERE isbn = 10001
+
+--5. Instructiunea UPDATE
+
+--5.1 Extragere linie din tabela member cu val. cp. member_no = 507
+
+SELECT * FROM member
+WHERE member_no = 507
+
+--5.2 Actualizare cp. lastname pt. membrul 507:
+
+UPDATE member
+SET lastname = 'Ionescu'
+WHERE member_no = 507
+
+
+--6. Modificare tabele bazat pe alte tabele
+
+--6.1 Adaugare nou membru copil (juvenil) la B.D.
+-- deoarece procesul adaugarii unui nou copil cere 2 i-ni INSERT,
+-- actiunea se va trata ca o tranzactie
+
+BEGIN TRANSACTION
+SET IDENTITY_INSERT member ON --pt. a adauga valori de tip IDENTITY
+INSERT member(member_no, lastname, firstname, middleinitial)
+VALUES(16101, 'Popa','George', 'A')
+SET IDENTITY_INSERT member OFF
+SELECT * FROM member WHERE member_no = 16101
+
+INSERT  juvenile
+VALUES (16101, 1, DATEADD(yy,-18,DATEADD(dd, -1, GETDATE())))
+SELECT * FROM juvenile WHERE member_no=16101
+COMMIT TRANSACTION
+
+
+--6.2 Inserare inregistrari in tabela adult, din tabela juvenil, pt. 
+--     copiii care-au depasit 18 ani
+
+INSERT adult (member_no, street, city, state, zip, phone_no, expr_date)
+SELECT j.member_no, a.street, a.city, a. state, a.zip, a.phone_no, DATEADD(yy, 1, GETDATE())
+FROM juvenile j JOIN adult a
+ON a.member_no = j.adult_member_no
+WHERE DATEADD(yy, 18, j.birth_date) < GETDATE() AND j.member_no=16101
+
+-- verificare ca s-a inserat o linie in tabela adult
+SELECT * FROM adult WHERE member_no = 16101
+
+--6.3 Determinare linii ce trebuie sterse din
+--    tabela juvenile, dupa ce membrii copii au devinit adulti
+
+SELECT * FROM juvenile JOIN adult
+ON adult.member_no = juvenile.member_no
+
+--6.4 Stergere linii din tabela juvenile care se regasesc si in  tabela adult
+
+DELETE juvenile FROM juvenile JOIN adult
+ON adult.member_no = juvenile.member_no
+
+--6.5 Verificare stergere copil din tabela juvenile (care-a devenit adult)
+
+SELECT * FROM juvenile WHERE member_no = 16101
+
+--Obs. Acest tanar a disparut
+
+
+
+
+
+

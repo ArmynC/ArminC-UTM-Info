@@ -1,0 +1,189 @@
+--I. Subinterogari monolinie (intorc doar o inregistrare la executie)
+
+--I.6 Afisare job cu cel mai mic salariu mediu
+SELECT job,AVG(sal) [Salariul mediu minim]
+FROM emp
+GROUP BY job
+HAVING AVG(sal) = 
+	(SELECT MIN(AVG(sal)) FROM emp GROUP by job)
+
+	--OBS!
+	-- In Oracle merge, aici NU!
+	-- Mesaj:
+	-- Msg 130, Level 15, State 1, Line 7
+-- Cannot perform an aggregate function on an expression containing an aggregate or a subquery.
+
+-- Rescriere pt. Microsoft:
+SELECT job,AVG(sal) [salariul mediu minim]
+FROM emp
+GROUP BY job
+HAVING AVG(sal) = 
+	(SELECT TOP 1 AVG(sal) FROM emp GROUP by job ORDER BY AVG(sal))
+	  --sau
+
+	  DECLARE @sal_min REAL
+	  SET @sal_min = (SELECT TOP 1 AVG(sal) FROM emp GROUP by job ORDER BY AVG(sal))
+	  SELECT job,AVG(sal) [salariul mediu minim]
+		FROM emp
+		GROUP BY job
+		HAVING AVG(sal) = @sal_min
+
+--II. Subinterogari multi linie (intorc mai multe inregistrari la executie)
+
+	-- II. 7  Sa se afiseze angajatii cu salariul egal cu minimul salarial din orice departament
+	SELECT ename,sal,deptno [Nr. departament]
+	FROM emp
+	WHERE sal IN (SELECT MIN(sal) FROM emp GROUP BY deptno)
+	--sau cei cu sal. egal cu minimul din dep. lor
+	SELECT ename,sal,emp.deptno [Nr. departament]
+	FROM emp,(SELECT deptno,MIN(sal) minim FROM emp GROUP BY deptno) sal_min
+	WHERE sal =sal_min.minim AND emp.deptno = sal_min.deptno 
+
+	--	< ANY inseamna < maxim
+	--	> ANY inseamna > minim
+	--	= ANY inseamna IN 
+	--	> ALL inseamna > maxim
+	--	< ALL inseamna < minim
+
+
+	--II. 12 Afisare angajati cu salariul mai mare decat
+	--        salariul mediu din depart. din care fac parte
+
+		   SELECT a.ename [Nume salariat], a.sal [Salariu angajat],a.deptno [Nr. departament],
+	      	   b.salmed [Salariu mediu departament]
+		   FROM emp a, (SELECT deptno,avg(sal) salmed FROM emp b GROUP BY deptno) b
+		   WHERE a.deptno = b.deptno AND a.sal > b.salmed
+
+		   --sau (cu JOIN)
+		   SELECT a.ename [Nume salariat], a.sal [Salariu angajat],a.deptno [Nr. departament],
+	           STR(b.salmed,7,2) [Salariu mediu departament]
+		   FROM emp a JOIN (SELECT deptno,avg(sal) salmed FROM emp b GROUP BY deptno) b
+		   ON a.deptno = b.deptno -- AND a.sal > b.salmed
+		   WHERE a.sal > b.salmed
+
+		   select str(FLOOR(1.22346*100)/100,6,2) --FLOOR: intoarce cel mai mic intreg <= expresie
+		    select FLOOR(1.22346*100)/100
+
+--III. 14 Afisare nr. de sefi
+
+use angajati
+select COUNT(empno) [Numar de sefi] from emp
+WHERE empno in (select mgr from emp where mgr is not null)
+--sau
+
+select COUNT(distinct(mgr)) [Nr sefi] from emp 
+
+--Afisare sefi
+select ename from emp
+WHERE empno in (select mgr from emp where mgr is not null) 
+
+--EXERCITIUL 1 SUPLIMENTAR:
+-- Folosire subinterogare in clauza FROM, B.D. Northwind
+USE Northwind 
+
+drop table alfa --tabela de manevra
+
+SELECT oras_client, numar_clienti
+INTO alfa
+FROM (SELECT city oras, COUNT(*) [Nr. de clienti]
+FROM customers GROUP BY city ) 
+AS clienti(oras_client, numar_clienti)
+WHERE numar_clienti > 2; --orase cu un nr. de cel putin 3 clienti
+
+--listare oras si a nr. de clienti din orasul respectiv
+SELECT * FROM alfa
+
+--listare oras si a numelor de clienti din tabela alfa corelata cu cea de clienti
+SELECT city [Nume oras],ContactName [Nume client] FROM customers JOIN alfa
+ON alfa.oras_client =customers.City ORDER BY alfa .oras_client ,Customers .ContactName 
+			
+
+--EXERCITIUL 2 SUPLIMENTAR:
+
+--afisare nr. factura cu valoarea totala a produselor vandute, in ordine descrescatoare a valorii
+SELECT orderid, SUM(unitprice*quantity) AS total_factura
+FROM [Order Details]  GROUP BY OrderID
+ORDER BY total_factura DESC 
+
+-- afisarea celei mai scumpe facturi, CU SUBINTEROGARE IN CLAUZA FROM
+DROP TABLE beta --tabela de manevra
+
+SELECT nr_fact,MAX(total) AS [Valoare max. produse]
+into beta
+FROM (SELECT orderid, SUM(unitprice*quantity) AS total_factura FROM [Order Details]  GROUP BY OrderID ) AS total_facturi(nr_fact,total)
+GROUP BY nr_fact
+ORDER BY [Valoare max. produse] DESC
+
+
+select  * from beta ORDER BY [Valoare max. produse] DESC
+
+--executati si(echivalenta):
+
+SELECT  nr_fact,total AS [Valoare max. produse]
+FROM (SELECT orderid, SUM(unitprice*quantity) AS total_factura FROM [Order Details]  GROUP BY OrderID ) AS total_facturi(nr_fact,total)
+ORDER By [Valoare max. produse] DESC
+
+--afisare produse care fac parte din factura cu valoarea maxima
+
+SELECT Productname [Nume produs], od.unitprice* od.Quantity  [Valoare] 
+from Products p JOIN [Order Details] od ON p.productid=od.ProductID
+JOIN beta b  ON od.OrderID  = b.nr_fact 
+WHERE b.nr_fact = (SELECT TOP 1 nr_fact FROM beta ORDER BY [Valoare max. produse] DESC)
+
+--Exercitiul 3 suplimentar:
+
+--Afisati angajatii cu salariul maxim pe job:
+
+SELECT ename,emp.job,sal
+FROM emp ,(SELECT job,max(sal) max from emp GROUP BY job) as t --subinterogare tabel
+WHERE emp.sal IN (SELECT max(sal) max from emp GROUP BY job) AND emp.job = t.job
+
+-- sau
+
+SELECT ename,emp.job,sal
+FROM emp ,(SELECT job,max(sal) max from emp GROUP BY job) as t --subinterogare tabel
+WHERE emp.sal =t.max AND emp.job = t.job --comparatie stil ANSI 89
+
+
+-- sau
+
+SELECT ename,emp.job,sal
+FROM emp JOIN (SELECT job,max(sal) max from emp GROUP BY job) as t --subinterogare tabel
+ON emp.sal =t.max AND emp.job = t.job --JOIN intre tabele(ANSI 92)
+
+--sau
+
+SELECT ename,job,sal
+FROM emp a_ext
+WHERE a_ext.sal IN (SELECT max(sal) from emp WHERE job = a_ext.job) --subinterogare corelata
+
+select ename,job,sal from emp --verificare afisare anterioara
+
+--Exercitiul 4 suplimentar:
+-- afisare suma salariilor pe job in ordine descendenta
+
+
+SELECT job,tot_suma AS [Suma salariilor pe job]
+FROM (SELECT job,SUM(sal) AS suma_totala_job FROM emp GROUP BY job)
+  AS suma_totala_job (job, tot_suma)--utilizare subinterogare pe post de tabela
+ORDER BY 2 DESC
+
+--Exercitiul 5 suplimentar:
+--Ce diferenta este intre instr-le urmatoare:
+
+SELECT job, SUM(sal) AS tot_sal [Suma totala pe job],max(sal) [Sal. maxim pe job]
+FROM emp GROUP BY job
+HAVING sum(sal) = MAX(sal) --listeaza job-ul unde suma sal. este = max(1 ang./job)
+
+--si
+
+SELECT job, SUM(sal) AS [Suma totala pe job]
+FROM emp GROUP BY job
+ORDER BY [Suma totala pe job] DESC --list. suma sal. pe jobs desc
+
+--si
+
+SELECT TOP 1 job, SUM(sal) AS [Suma totala pe job]
+FROM emp GROUP BY job
+ORDER BY [Suma totala pe job] DESC --list. suma sal. pe jobs maxima
+

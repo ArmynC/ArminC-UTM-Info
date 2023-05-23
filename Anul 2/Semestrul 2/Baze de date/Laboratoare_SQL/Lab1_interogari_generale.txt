@@ -1,0 +1,150 @@
+--OBS. Unde apar numerotari (de la I in sus), se dau rezolvari la exercitiile de interogare propuse
+
+
+--SELECT cu sintaxa generala(indiferent de B.D. curenta)
+-- nu mai este nevoie sa se foloseasca USE bd
+select * from sys.servers
+SELECT * FROM .Northwind.dbo.categories
+SELECT * FROM Northwind.dbo.categories
+SELECT * FROM dbo.categories --eroare, daca BD curent selectata nu e Northwind
+
+--Afisare date calendaristice in diferite formate, indiferent de
+-- cum au fost stocate in BD
+
+
+SELECT ename [Nume angajat],'AMERICAN:' [Format data angajare],CONVERT(varchar(30),hiredate,101) [Data angajare]
+FROM angajati.dbo.emp WHERE empno=7566
+UNION
+SELECT ename [Nume angajat],'ANSI:' [Format data angajare],CONVERT(varchar(30),hiredate,102) [Data angajare]
+FROM angajati.dbo.emp WHERE empno=7566
+UNION
+SELECT ename [Nume angajat],'JAPONEZ:' [Format data angajare],CONVERT(varchar(30),hiredate,111) [Data angajare]
+FROM angajati.dbo.emp WHERE empno=7566
+UNION
+SELECT ename [Nume angajat],'EUROPEAN:' [Format data angajare],CONVERT(varchar(30),hiredate,113) [Data angajare]
+FROM angajati.dbo.emp WHERE empno=7566
+
+--0.2 Afisati nr. de inregistrari din tabela emp
+
+USE angajati --toate ex. urmatoare folosesc aceasta B.D.
+go
+
+select [Nume tabela]='Tabela emp', count(*) [Nr inreg.] from emp 
+
+--0.3 Nr. de angajati din dep. 30
+
+select 'In departamentul '+str(deptno,3)+' sunt '+str(count(*),2)+' angajati!'from emp 
+where deptno =30
+group by deptno
+
+--0.10 Afisare subordonati pt. managerul cu codul 7698
+
+select a.ename [Nume subordonat],a.job [Functie subordonat], a1.ename [Nume manager],a1.empno [Cod manager] from emp a,emp a1
+where a.mgr = 7698 and a.mgr=a1.empno
+
+-- Afisare subordonati si sefii acestora, in ordinea numelui sefului
+select  a.ename [Nume subordonat],a.job [Functie subordonat], a1.ename [Nume manager],a1.empno [Cod manager] from emp a,emp a1
+where a.mgr=a1.empno
+order by a1.ename
+
+--I.5 Afisare angajati veniti intre 20.2.81 si 1.05.81
+ 
+DBCC USEROPTIONS --vizualizeaza setarile pt. conexiunea curenta
+set dateformat dmy --setare data calendaristica: zi, luna, an
+
+select ename, job, hiredate from emp
+where hiredate between '20-02-81' and '1.05.81'
+
+---I. 9 afisare angajati in 1982
+
+select ename,hiredate from emp where hiredate like '%82%'
+
+--I.12 Vizualizare colate b.d. (pt. comparatii)
+
+sp_helpdb angajati
+-- afisare nume angajat care are a treia litera a numelui 'C'
+SELECT ename from emp
+where ename collate latin1_general_cs_as like '__C%'
+
+--Afisare  collations suportate de sql server
+SELECT Name, Description  FROM fn_helpcollations()
+WHERE Name like 'Lat%' --AND Description LIKE '% binary sort';
+
+
+-- Folosire functii sistem pentru date calendaristice
+-- FUNCTIE f3:
+
+-- afisare nume, data angajare si data revizuire salariu(dupa 6 luni de la angajare)
+
+select ename [Nume angajat],hiredate [Data angajare],DATENAME(mm,hiredate) [Luna angajare],
+       DATENAME(mm,Dateadd(m,6,hiredate)) [Luna revizuire]
+from emp
+---- afisare nume, data angajare si data revizuire salariu(dupa 6 luni de la angajare); se afiseaza si anul
+select ename [Nume angajat],hiredate [Data angajare],DATENAME(mm,hiredate) [Luna angajare],
+       DATENAME(mm,Dateadd(m,6,hiredate)) + ' '+DATENAME(yyyy,Dateadd(m,6,hiredate)) [Luna si anul revizuire]
+from emp
+ 
+ --rescrisa fara functii calendaristice
+	select ename [Nume angajat],hiredate [Data angajare],Month(hiredate) [Luna angajare],
+       (MONTH(hiredate)+6)%12 [Luna revizuire]
+	from emp --ce se intampla pt. luna angajare = 6?
+
+ --rescrisa fara functii calendaristice(corectam luna angajare = 6)
+	select ename [Nume angajat],hiredate [Data angajare],Month(hiredate) [Luna angajare],
+       (MONTH(hiredate)+5)%12+1 [Luna revizuire]
+	from emp
+ --rescrisa instr. ant. cu instruct. CASE
+	select ename [Nume angajat],hiredate [Data angajare],Month(hiredate) [Luna angajare],
+        [Luna revizuire] =
+		CASE (MONTH(hiredate)+6)%12
+		WHEN 0 THEN 12
+		ELSE (MONTH(hiredate)+6)%12
+		END
+	from emp
+	   
+          --sau (fara conditie case)
+	   
+	select ename [Nume angajat],hiredate [Data angajare],Month(hiredate) [Luna angajare],
+        [Luna revizuire] =
+		CASE 
+		WHEN MONTH(hiredate)=6 THEN 12
+		ELSE (MONTH(hiredate)+6)%12
+		END
+	from emp
+
+	--sau cu afisarea lunilor in lb. romana
+
+	select ename [Nume angajat],hiredate [Data angajare],
+	       [Luna angajare] = 
+		   CASE MONTH (hiredate)
+		   WHEN 1 THEN 'Íanuarie'
+		   WHEN 2 THEN 'Februarie'
+		   WHEN 3 THEN 'Martie'
+		   WHEN 4 THEN 'Aprilie'
+		   WHEN 5 THEN 'Mai'
+		   WHEN 6 THEN 'Íunie'
+		   WHEN 7 THEN 'Íulie'
+		   WHEN 8 THEN 'August'
+		   WHEN 9 THEN 'Septembrie'
+		   WHEN 10 THEN 'Octombrie'
+		   WHEN 11 THEN 'Noiembrie'
+		   WHEN 12 THEN 'Decembrie'
+		   END,
+        [Luna revizuire] =
+		CASE (MONTH(hiredate)+5)%12+1
+		   WHEN 1 THEN 'Íanuarie'
+		   WHEN 2 THEN 'Februarie'
+		   WHEN 3 THEN 'Martie'
+		   WHEN 4 THEN 'Aprilie'
+		   WHEN 5 THEN 'Mai'
+		   WHEN 6 THEN 'Íunie'
+		   WHEN 7 THEN 'Íulie'
+		   WHEN 8 THEN 'August'
+		   WHEN 9 THEN 'Septembrie'
+		   WHEN 10 THEN 'Octombrie'
+		   WHEN 11 THEN 'Noiembrie'
+		   WHEN 12 THEN 'Decembrie'
+		ELSE 'Luna eronata!!'
+		END
+	from emp
+

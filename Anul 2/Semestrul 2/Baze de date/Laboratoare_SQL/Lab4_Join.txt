@@ -1,0 +1,36 @@
+-- Afisare job, nume, nr. departament si salariu, pt. angajatii cu salariul minim pe job
+use angajati
+go
+select e.job,ename,deptno,sal 
+from emp e,(select job,min(sal) minim from emp e1 group by job) sal_job
+where sal =sal_job.minim AND e.job=sal_job.job
+order by e.job
+
+--sau cu JOIN
+
+select e.job,ename,deptno,sal 
+from emp e JOIN (select job,min(sal) minim from emp e1 group by job) sal_job
+ON sal =sal_job.minim AND e.job=sal_job.job
+order by e.job
+
+--5. Afisare membrii apartinand statului Arizona(cu mai mult de doi copii) si a celor care apartin statului California(cu mai mult de trei copii)
+--      (in ordinea cresc. a nr. de copii)
+use library
+SELECT        COUNT(*) AS [Nr. de copii], dbo.member.member_no AS [Cod parinte], dbo.member.lastname AS [Nume parinte], 
+              dbo.member.firstname AS [Prenume parinte]
+FROM            dbo.adult INNER JOIN dbo.juvenile ON dbo.adult.member_no = dbo.juvenile.adult_member_no 
+                          INNER JOIN dbo.member ON dbo.adult.member_no = dbo.member.member_no
+	WHERE (dbo.adult.state = 'az')
+	GROUP BY dbo.member.member_no, dbo.member.lastname, dbo.member.firstname
+	HAVING (COUNT(*) > 2) 
+
+union 
+SELECT        COUNT(*) AS [Nr. de copii], dbo.member.member_no AS [Cod parinte], dbo.member.lastname AS [Nume parinte], 
+              dbo.member.firstname AS [Prenume parinte]
+FROM            dbo.adult INNER JOIN dbo.juvenile ON dbo.adult.member_no = dbo.juvenile.adult_member_no 
+                          INNER JOIN dbo.member ON dbo.adult.member_no = dbo.member.member_no
+	WHERE (dbo.adult.state = 'ca')
+	GROUP BY dbo.member.member_no, dbo.member.lastname, dbo.member.firstname
+	HAVING  (COUNT(*) > 3)
+order by [Nr. de copii]
+

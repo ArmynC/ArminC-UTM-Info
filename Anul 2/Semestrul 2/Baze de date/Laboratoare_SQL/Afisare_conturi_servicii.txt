@@ -1,0 +1,15 @@
+--afisare conturi servicii instalate din instanta curenta
+SELECT servicename, service_account
+FROM sys.dm_server_services 
+WHERE servicename LIKE 'SQL Server Agent%'
+
+
+SELECT servicename, service_account
+FROM sys.dm_server_services 
+WHERE servicename LIKE 'SQL%'
+
+--afisare instante SQL Server instalate pe calculator
+EXECUTE xp_regread
+  @rootkey = 'HKEY_LOCAL_MACHINE',
+  @key = 'SOFTWARE\Microsoft\Microsoft SQL Server',
+  @value_name = 'InstalledInstances'

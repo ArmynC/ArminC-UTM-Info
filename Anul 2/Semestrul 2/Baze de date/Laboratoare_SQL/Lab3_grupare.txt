@@ -1,0 +1,121 @@
+--2. Sa se afiseze data de angajare cea mai veche si cea mai noua
+SELECT MIN(hiredate) [Data primului angajat],MAX(hiredate) [Data ultimului angajat]
+FROM emp
+
+---sa se afiseze numele primului angajat si al celui mai nou
+SELECT amin.ename [Nume prim angajat], amin.hiredate [Data ang. primul],
+	   amax.ename [Nume ultim angajat], amax.hiredate [Data ang. ultimul]
+	   FROM emp amin,emp amax
+	   WHERE amin.hiredate=(SELECT MIN(hiredate) FROM emp)   AND 
+			 amax.hiredate=(SELECT MAX(hiredate) FROM emp)
+
+--4. Afisare nr. de angajati din dep. 30 care primesc comision
+SELECT COUNT(comm) [Nr. angajati cu comision] from emp
+WHERE deptno=30
+--vezi si: (care este diferenta?)
+SELECT COUNT(*) [Nr. angajati cu comision] from emp
+WHERE deptno=30
+
+--Afisare nr. de departamente:
+SELECT COUNT(DISTINCT(deptno)) [Nr. de departamente]
+FROM emp
+
+--6. Afisare nr. dep. si salariul mediu pe departament
+SELECT deptno,AVG(sal) [Sal. mediu]
+FROM emp
+GROUP BY deptno
+--sau
+SELECT AVG(sal) [Sal. mediu]
+FROM emp
+GROUP BY deptno
+--sau
+SELECT deptno,AVG(sal) [Sal. mediu]
+FROM emp
+GROUP BY deptno
+ORDER BY AVG(sal)
+
+--7. nu e permis
+SELECT deptno,AVG(sal) [Sal. mediu]
+FROM emp
+WHERE AVG(sal) > 2000
+GROUP BY deptno
+     --dar e corect
+SELECT deptno,AVG(sal) [Sal. mediu]
+FROM emp
+GROUP BY deptno
+HAVING AVG(sal) > 2000
+
+--Afisare job, salariul total/job, pt. cele cu suma totala > 5000; se exclude job-ul salesman
+--Se afis. in ordinea crescatoare a totalului salariului
+SELECT job, SUM(sal) [Total salarii/job]
+FROM emp
+WHERE job NOT LIKE 'sales%'
+GROUP BY job
+HAVING SUM(sal) > 5000
+ORDER BY SUM(sal) DESC
+
+--8. Afisare salariu mediu maxim pe departamente
+-- nu e permis
+SELECT MAX(AVG(sal)) [Sal. mediu maxim/depart.]
+FROM emp
+GROUP BY deptno
+
+-- Mesaj de eroare:  Msg 130, Level 15, State 1, Line 1
+----Cannot perform an aggregate function on an expression containing an aggregate or a subquery.
+
+-- se poate insa:
+SELECT TOP 1  deptno [Nr. departament], AVG(sal) [Sal. mediu maxim/depart.]
+FROM emp
+GROUP BY deptno
+ORDER BY AVG(sal) DESC
+
+--verificare
+select deptno,AVG(sal) from emp
+group by deptno
+order by AVG(sal) DESC
+
+-- Afis. nr. de sefi din firma:
+SELECT COUNT(DISTINCT(mgr)) 'Nr. de sefi'
+FROM emp
+
+--tema 6
+-- Afisati codul sefului si cel mai mic salariu al angajatilor care-l au ca sef;
+-- excludeti angajatii care nu au sef si grupurile de angajati (ai sefului respectiv) care au min(sal) < 1000;
+-- sortati rez. in ordinea descr. a salariului
+
+SELECT mgr [Cod sef], MIN(sal) [Salariul minim subordonati]
+FROM emp
+WHERE mgr IS NOT NULL
+GROUP BY mgr
+HAVING MIN(sal) > 1000
+ORDER BY MIN(sal) DESC
+-- verificare pt. un cod de sef:
+
+SELECT  mgr [Cod sef],MIN(sal)[Salariul minim subordonati] 
+FROM emp 
+WHERE mgr=7566
+GROUP BY mgr
+
+--tema 7
+--Afisati numele si locatia departamentului, nr. de angajati si salariul mediu
+-- pt. angajatii din acel departament
+
+SELECT d.dname [Nume departament], d.loc [Locatia departament],
+       COUNT(*) [Nr. de angajati],AVG(sal) [Salariul mediu/dep.]
+	   FROM emp a JOIN dept d
+	   ON a.deptno = d.deptno
+	   GROUP BY d.dname,d.loc
+--tema 8
+-- Afisare nr. de angajati din fiecare an calendaristic
+SELECT YEAR(hiredate) [Anul angajarii],
+       COUNT(hiredate) [Nr. de angajati]
+	   FROM emp
+	   GROUP BY YEAR(hiredate)
+
+--Afisare angajati si contorizarea lor
+SELECT a1.ename  [Nume angajat],a1.job Functia,
+       a.nr_ang [Nr. angajati/job]
+FROM emp a1 JOIN
+		(SELECT job, COUNT(*) nr_ang FROM emp GROUP BY job ) a
+		ON a1.job=a.job 
+		ORDER BY a1.job ,a1.ename 

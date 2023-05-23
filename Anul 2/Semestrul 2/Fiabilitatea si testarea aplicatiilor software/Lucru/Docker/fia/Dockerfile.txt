@@ -1,0 +1,5 @@
+FROM alpine
+CMD ["echo","hello Armin"]
+nginx
+apach2e2
+flask

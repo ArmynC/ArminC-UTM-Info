@@ -1,0 +1,126 @@
+USE angajati
+
+-- Afisare angajati cu job-ul analyst
+
+select * from emp WHERE job ='analyst'
+order by ename desc
+
+-- Afisare nr. de angajati din departamentul 20
+
+select 'In depart. '+ltrim(str(deptno)) +' sunt'+str(count(*),3)+' angajati!' from emp 
+where deptno =20
+group by deptno 
+
+--Afisare angajati cu salariul in intervalul (1500, 2800)
+
+SELECT * from emp where sal > 1500 and sal <2800
+
+--vizualizare setari
+dbcc useroptions
+
+-- Afisare salariati cu job-ul clerk sau analyst, angajati intre (1.01.1981, 4.12.1981)
+
+SELECT * from emp where job in('clerk','analyst')
+and hiredate > '01.01.81' and hiredate < '04.12.81' --and deptno =20
+order by job 
+
+-- Setare format interpretara data calendaristica
+set dateformat  dmy --zi, luna, an
+
+--Afisare angajati care au comisionul mai mic decat salariul, in ordinea ascendenta a salariului
+
+SELECT ename,job, sal,comm, sal-comm as diferenta from emp 
+where sal > comm 
+order by 3 
+
+--Afisare i-tii despre angajatii care-l au sef pe managerul cu codul 7698
+select * from emp where mgr =7698
+
+--Afisare i-tii despre managerul cu codul 7698
+select * from emp where empno  =7698
+
+--Afisare i-tii despre angajatii si seful cu codul 7698
+select a.*,s.ename  [Nume sef],s. empno [Cod sef]
+from emp a,emp s
+where s.empno  =7698
+and a.mgr = s.empno 
+--where a.mgr=7698
+
+-- Afisare job si a nr. de angajati
+select job,COUNT(*) [nr de joburi]from emp
+group by job 
+
+--Afisare job-uri existente in firma
+select distinct job from emp
+
+--Afisare angajati care primesc comision, in ordinea desc. a salariului si a comisionului
+select ename,sal,comm
+from emp 
+where comm is not null
+order by sal desc,comm desc
+
+-- Afisare angajati care au litera A al treilea caracter al numelui
+select ename,sal
+from emp 
+where ename  collate latin1_general_cs_as like '__A%'
+
+--Afisare i-tii despre  tabela emp
+sp_help emp
+
+--Afisare nume angajat, cod sef si nr. depart., pt. angajatii cu doi de l in nume si care fac parte din depart. 30 
+-- sau care au seful cu codul 7782 (si orice nume de angajat)
+select ename,mgr,deptno
+from emp 
+where (ename like '%l%l%'
+and deptno =30 )or mgr =7782
+
+--Afisare nume angajati, data ang., luna, luna si anul reviziei salariale(peste 6 luni de la angajare)
+select ename,hiredate,DATENAME (mm,hiredate) [Luna angajare],
+DATENAME (mm,dateadd(m,6,hiredate)) +' '+ datename(YYYY,DATEADD (m,6,hiredate)) [Luna si anul revizuire]
+from emp 
+-- sau
+select ename,month(hiredate) [Luna angajare],[Luna revizuire]=
+case (MONTH (hiredate)+6)%12 
+ when 0 then 6
+ else
+ (MONTH (hiredate)+6)%12 
+ end
+from emp 
+--select (6+5)%12
+
+--Afisare cod produse, a categoriei din care fac parte si a numelui acestora
+use Northwind
+SELECT   ProductID [cod produs], Categoria =
+      CASE CategoryID
+         WHEN 1 THEN 'Beverages'
+         WHEN 2 THEN 'Condiments'
+         WHEN 3 THEN 'Confections'
+         WHEN 4 THEN 'Dairy Products'
+		 WHEN 5 THEN 'Grains/Cereals'
+		 WHEN 6 THEN 'Meat/Poultry'
+		 WHEN 7 THEN 'Produce'
+		 WHEN 8 THEN 'Seafood'
+         ELSE 'Necunoscuta !!'
+      END,
+   ProductName [Nume produs]
+FROM Products
+ORDER BY ProductID;
+GO
+
+--in limba romana
+SELECT   ProductID [cod produs], Categoria =
+      CASE CategoryID
+         WHEN 1 THEN 'Bauturi'
+         WHEN 2 THEN 'Condimente'
+         WHEN 3 THEN 'Confectii'
+         WHEN 4 THEN 'Produse lactate'
+		 WHEN 5 THEN 'Grane/Cereale'
+		 WHEN 6 THEN 'Carne/Pasari de curte'
+		 WHEN 7 THEN 'Produse agricole'
+		 WHEN 8 THEN 'Produse marine'
+         ELSE 'Necunoscuta !!'
+      END,
+   ProductName [Nume produs]
+FROM Products
+ORDER BY [Nume produs];
+GO

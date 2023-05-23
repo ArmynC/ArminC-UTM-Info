@@ -1,0 +1,112 @@
+{
+  "id": "58d96c3f-f82f-461c-95c4-be342d305ad9",
+  "version": "2.0",
+  "name": "Test",
+  "url": "https://www.utm.ro",
+  "tests": [
+    {
+      "id": "15514340-2865-40d7-977e-cad97715dd61",
+      "name": "UTM Info",
+      "commands": [
+        {
+          "id": "f36f933d-daa7-4a1c-ae29-a086156fbc60",
+          "comment": "",
+          "command": "open",
+          "target": "/",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "a9970203-f3c3-4638-93dc-b1401ee84fe4",
+          "comment": "",
+          "command": "setWindowSize",
+          "target": "1382x744",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "5a1988bf-7f79-493f-b87f-7b2827a607a3",
+          "comment": "",
+          "command": "runScript",
+          "target": "window.scrollTo(0,113)",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "5413171b-0994-4e1f-b4b9-08e183189e0d",
+          "comment": "",
+          "command": "runScript",
+          "target": "window.scrollTo(0,1991)",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "3aef4f10-cf01-44c8-9eb7-c5953dd3fb51",
+          "comment": "",
+          "command": "click",
+          "target": "css=#nav-menu-item-276 > .menu-link",
+          "targets": [
+            [
+              "css=#nav-menu-item-276 > .menu-link",
+              "css:finder"
+            ],
+            [
+              "xpath=//a[contains(text(),'Facultăți')]",
+              "xpath:link"
+            ],
+            [
+              "xpath=//li[@id='nav-menu-item-276']/a",
+              "xpath:idRelative"
+            ],
+            [
+              "xpath=//a[contains(@href, 'https://www.utm.ro/facultati/')]",
+              "xpath:href"
+            ],
+            [
+              "xpath=//div[2]/ul/li[3]/a",
+              "xpath:position"
+            ]
+          ],
+          "value": ""
+        },
+        {
+          "id": "97a192c8-9ffb-4967-88c0-ba27c2d54f0e",
+          "comment": "",
+          "command": "click",
+          "target": "css=.vc_custom_1560517139114 strong",
+          "targets": [
+            [
+              "css=.vc_custom_1560517139114 strong",
+              "css:finder"
+            ],
+            [
+              "xpath=//div[@id='content']/article/section/div/div/div/div/div/div/div[3]/div/div/h2/a/strong",
+              "xpath:idRelative"
+            ],
+            [
+              "xpath=//div[3]/div/div/h2/a/strong",
+              "xpath:position"
+            ]
+          ],
+          "value": ""
+        }
+      ]
+    }
+  ],
+  "suites": [
+    {
+      "id": "58b5acce-d7b7-4ac0-bb09-d85d6b85b746",
+      "name": "Default Suite",
+      "persistSession": false,
+      "parallel": false,
+      "timeout": 300,
+      "tests": [
+        "15514340-2865-40d7-977e-cad97715dd61"
+      ]
+    }
+  ],
+  "urls": [
+    "https://www.utm.ro/"
+  ],
+  "plugins": []
+}
