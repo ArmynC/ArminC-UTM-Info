@@ -1,0 +1,37 @@
+<!doctypehtml>
+    <htmllang="en">
+
+        <head><metacharset="utf-8">
+                <title>jQuery draggable </title>
+                <linkrel="stylesheet"href="http: //code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
+                    <scriptsrc="http: //code.jquery.com/jquery-1.9.1.js">
+                        </script>
+                        <scriptsrc="http: //code.jquery.com/ui/1.10.4/jquery-ui.js">
+                            </script>
+                            <linkrel="stylesheet"href=" /resources/demos/style.css">
+                                <style>
+                                    #draggable {
+                                        width: 150px;
+                                        height: 150px;
+                                        padding: 1.5em;
+                                    }
+
+                                    .c {
+                                        font-size: 20px;
+                                        color: brown;
+                                        font-weight: 900;
+                                    }
+                                </style>
+                                <script>$(function () { $("#draggable,h1,.c").draggable(); });</script>
+        </head>
+
+        <body><divid="draggable"class="ui-widget-content">
+                <p>Text pentru drag...</p>
+                </div>
+                <div>
+                    <h3class="c">Text 2...</h3>
+                </div>
+                <h1>Student</h1>
+        </body>
+
+        </html>

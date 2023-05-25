@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        function Calcul(){
+            //preluare date din formular dupa ID
+            //sa se modifice aceasta functie folosind metoda getElementById pentru toate elementele preluate.
+            //sa se aplice stiluri pentru ca interfata sa fie optima
+            var nume_c= document.getElementById("n").value;
+            var cantitate = parseInt(document.getElementById("c1").value);
+            var pret_p = parseInt(document.getElementById("p1").value);
+            // calcul
+var valoare_f=cantitate*pret_p;
+var mesaj="Domnul "+nume_c.toUpperCase()+" ati cumparat produse in valoare de "+valoare_f+ "lei";
+
+            //afisare rezultat  cu alta metoda..
+           f.valoare.value = mesaj;
+        }
+		function sterge(x)
+		{
+		x.value="";
+		}
+        function sterge_plus(x,y)
+		{
+		x.value="";
+        y.value="";
+		}
+    </script>
+</head>
+<body>
+<form name="f" method="post">
+    Nume cumparator =<input type="text" id="n" name="nume" onclick="sterge(nume)" /><br />
+    Cantitate =<input type="text" id="c1" name="cant" onclick="sterge_plus(cant,valoare)" /><br />
+    Pret unitar =<input type="text" id="p1" name="pret" onclick="sterge_plus(pret,valoare)" /><br />
+  TVA %=<input type="text" id="p1" name="pret" onclick="sterge_plus(pret,valoare)" /><br />
+   Valoare cu TVA =<input type="text" id="v" name="valoare" onclick="sterge(numar)" size="80" readonly /><br />
+ 
+
+    <button type="button" id="calcul" onclick="Calcul()">Calcul</button>
+    <button type="reset">STERGE</button>
+</form>
+
+</body>
+</html>

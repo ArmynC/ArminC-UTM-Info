@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .hw100 {
+            width: 100px;
+            height: 100px;
+        }
+
+        div.test {
+            background-image: url('/p1.png');
+            background-repeat: no-repeat;
+            background-size: 20% 20%;
+            border: 1px solid black;
+            background-position: 20% 20%;
+            background-origin: content-box;
+        }
+
+        div.gradient-box {
+
+            background: -webkit-linear-gradient(180deg, red, blue);
+            /* For Safari 5.1 to 6.0 */
+            background: -o-linear-gradient(180deg, red, blue);
+            /* For Opera 11.1 to 12.0 */
+            background: -moz-linear-gradient(180deg, red, blue);
+            /*  For Firefox 3.6 to 15 */
+            background: linear-gradient(180deg, red, blue);
+            /*  Standard syntax */
+        }
+
+        div.gradient-box2 {
+            * For Safari 5.1 to 6.0 */background: -webkit-linear-gradient(left, red, orange, yellow, green, blue, indigo, violet);
+            /* For Opera 11.1 to 12.0 */
+            background: -o-linear-gradient(left, red, orange, yellow, green, blue, indigo, violet);
+            /* For Fx 3.6 to 15 */
+            background: -moz-linear-gradient(left, red, orange, yellow, green, blue, indigo, violet);
+            /* Standard syntax */
+            background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
+        }
+
+        .gradient-box3 {
+            background: -webkit-linear-gradient(left, rgba(255, 0, 0, 0), rgba(255, 0, 0, 1));
+            /*Safari 5.1-6*/
+            background: -o-linear-gradient(right, rgba(255, 0, 0, 0), rgba(255, 0, 0, 1));
+            /*Opera 11.1-12*/
+            background: -moz-linear-gradient(right, rgba(255, 0, 0, 0), rgba(255, 0, 0, 1));
+            /*Fx 3.6-15*/
+            background: linear-gradient(to right, rgba(255, 0, 0, 0), rgba(255, 0, 0, 1));
+            /*Standard*/
+
+        }
+
+        .gradient-box4 {
+            /* Safari 5.1 to 6.0 */
+            background: -webkit-repeating-linear-gradient(red, yellow 10%, green 20%);
+            /* Opera 11.1 to 12.0 */
+            background: -o-repeating-linear-gradient(red, yellow 10%, green 20%);
+            /* Firefox 3.6 to 15 */
+            background: -moz-repeating-linear-gradient(red, yellow 10%, green 20%);
+            /* Standard syntax */
+            background: repeating-linear-gradient(red, yellow 10%, green 20%);
+        }
+
+        .gradient-box5 {
+            border-radius: 50px;
+            background: -webkit-radial-gradient(rgb(255, 230, 0), rgb(128, 58, 0), rgb(255, 0, 0));
+            /* Safari 5.1 to 6.0 */
+            background: -o-radial-gradient((rgb(255, 230, 0), rgb(128, 58, 0), rgb(255, 0, 0));
+                    /*  For Opera 11.6 to 12.0 */
+                    9background: -moz-radial-gradient(red, green, blue);
+                    /*   For Firefox 3.6 to 15 */
+                    background: radial-gradient(red, green, blue);
+                    /*   Standard syntax */
+
+            }
+    </style>
+</head>
+
+<body>
+    <section>
+        <div class="test hw100"></div>
+        <br>
+        <div class="gradient-box hw100">
+
+        </div>
+        <br>
+        <div class="gradient-box2 hw100">
+
+        </div>
+        <br>
+        <div class="gradient-box3 hw100">
+
+        </div>
+        <br>
+        <div class="gradient-box4 hw100">
+
+        </div>
+        <br>
+        <div class="gradient-box5 hw100">
+
+        </div>
+    </section>
+</body>
+
+</html>

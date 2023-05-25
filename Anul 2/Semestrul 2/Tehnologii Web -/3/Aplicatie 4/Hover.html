@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Example of CSS3 Transition</title>
+<style type="text/css">
+    button {
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        font: bold 18px sans-serif;
+        background: #fd7c2a;
+        -webkit-transition: background 2s; /* For Safari 3.0 to 6.0 */
+        transition: background 2s; /* For modern browsers */
+    }
+    button:hover {
+        background: #3cc16e;
+    }
+	
+	.button1 {
+		color: #fff;
+        padding: 10px 20px;
+        font: bold 18px sans-serif;
+        background: #fd7c2a;
+        border: 3px solid #dc5801;
+        /* For Safari 3.0+ */
+        -webkit-transition-property: background, border;
+        -webkit-transition-duration: 3s, 7;
+        /* Standard syntax */
+        transition-property: background, border;
+        transition-duration: 3s, 7s;
+    }
+    .button1:hover {
+        background: #3cc16e;
+        border-color: #288049;
+    }
+</style>
+</head>
+<body>
+	<button type="button">Hover on me</button>
+	<button type="button" class="button1">Hover on me</button>
+</body>
+</html>    

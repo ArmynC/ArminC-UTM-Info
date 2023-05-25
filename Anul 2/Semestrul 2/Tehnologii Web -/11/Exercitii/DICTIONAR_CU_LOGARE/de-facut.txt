@@ -1,0 +1,2 @@
+transformam sa foloseasca programare orientata
+login din baza de date in loc de fisier

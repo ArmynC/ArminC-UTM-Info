@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<!-- Documentul retine cartile dintr-o biblioteca -->
+<BIBLIOTECA>
+<CARTE>
+    <TITLU>XML </TITLU>
+    <AUTOR>Eminescu</AUTOR>
+    <EDITURA>Art Educational</EDITURA>
+    <AN_APARITIE>2019</AN_APARITIE>
+</CARTE>
+</BIBLIOTECA>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title> Date </title>
+		<script type="text/javascript">
+		function data(){
+			var azi= new Date();
+			var ziua = azi.getDate();
+			if(ziua<10) ziua="0"+ziua;//08
+			var luna = azi.getMonth()+1;
+			if(luna<10) luna="0"+luna;
+			var anul = azi.getFullYear();
+			var ora = azi.getHours();
+			var minutul = azi.getMinutes();
+			var secunda = azi.getSeconds();
+			document.write("Astazi suntem in " + ziua +"/"+ luna+"/"+ anul+", ");
+			document.write("ora este " + ora +":"+ minutul+":"+ secunda);
+			document.write('<style type="text/css"');
+		}	
+		</script>
+	</head>
+	<body>
+	<script>
+	data();
+	</script>	
+	</body>
+</html>

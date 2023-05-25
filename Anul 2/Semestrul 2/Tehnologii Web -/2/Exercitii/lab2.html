@@ -1,0 +1,65 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <link rel="stylesheet" href="lab2.css">
+
+  <title>Laborator 2</title>
+
+</head>
+
+<body> 
+  
+  <header> 
+  <h1>Laborator 2</h1>
+  </header>
+
+  <form method="get"> <!-- form -->
+   <p><label>Nume: <input type="text" name="nume"/></label></p>
+   <p><label>Prenume: <input type="text" name="prenume"/></label></p>
+   <p><label>Email: <input type="email" name="email"/></label></p>
+   <p><label>Browser: <input list="navigatoare" name="navigator"/></label></p>
+
+   <datalist id="navigatoare">
+<option value="Firefox">
+<option value="Chrome">
+<option value="Opera">
+<option value="Brave">
+<option value="Safari">
+<option value="Tor">
+    <option value="Edge">
+        <option value="amogusBrowser">
+   </datalist>
+
+   <input type="reset" value="Reset"/><br/>
+   <input type="submit" value="Submit"/><br/>
+</form>
+   
+   <hr>
+
+   <form oninput="x.value=parseInt(a.value)+parseInt(b.value)">0
+    <input type="range" id="a" value="100" min="0" max="1000">1000 +
+    <input type="number" id="b" value="50"> =
+    <output name="x" for="a b"></output>
+</form>
+
+<br>
+
+<div id="box">
+    <h2 id="sectiune"> Text, SPAN:</h2>
+    <span>Fraza pe linii multiple</span>
+    text alternativ in div
+</div>
+
+<div>
+    Text<div>Text secundar</div>
+</div>
+
+<input type="button" onmouseover="alert('sus')" value="Hover">
+  
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="../style.css">
+
+<head>
+<body>
+<ul class="meniu" id="meniu"> 
+<li><a href="../index.html">Acasa</a></li>
+<li><a href="canvas.html">Canvas</a></li>
+<li><a href="cerc.html">Cerc</a></li>
+<li><a href="patrat.html">Patrat</a></li>
+<li><a href="elipse.html">Elipse</a></li>
+<li><a href="poligon.html">Poligon</a></li>
+<li><a href="linie.html">Linie</a></li>
+</ul>
+<h2 align="center">Exemplu Canvas</h2>
+<canvas id="myCanvas" width="200" height="200" style="border:1px solid #d3d3d3;">
+Browser-ul dumneaoastra nu suporta tag-ul canvas.</canvas>
+<script>
+var c = document.getElementById("myCanvas");
+var ctx = c.getContext("2d");
+ctx.moveTo(0,0);
+ctx.lineTo(200,100);
+ctx.stroke();
+</script>
+</body>
+<footer>
+<p align="center"><b>Aplicatie</b></p>
+</footer>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>		<title> </title>
+		<link rel = "stylesheet" href = "style/style.css" type = "text/css">
+		<script type="text/javascript">
+		function test()
+			{
+				x=f.t1.value;//preia continutul...
+	a = x.toUpperCase().fontcolor("green").fontsize("6").italics().bold();
+			document.write(a+"<br/>");
+			b=x.italics();
+			document.write(b+"<br/>");
+			c=x.bold();
+			document.write(c+"<br/>");
+			d=x.length;
+			document.write("sirul care "+d+" caractere<br/>");
+			}		
+		</script>
+	</head>	<body>
+		<form name = "f">
+			<input type="text" name = "t1"/>
+			<input type="button" name = "b1" value = "Apasa" onclick="test()"/><br/>		</form>	</body></html>

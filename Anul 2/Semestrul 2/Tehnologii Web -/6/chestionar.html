@@ -1,0 +1,169 @@
+<!DOCTYPE>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title></title>
+    </head>
+    <body>
+<style>
+.td {
+	font-size: 16pt;
+	color: blue;
+	font-width: bold;
+}
+
+td {
+	font-width: 400;
+	font-size: 14;
+}
+</style>
+	<script>
+function validate() {
+  var scor = 0;
+  var mesaj;
+  var nume;
+  var i;
+  for (i = 1; i <= 10; i++) {
+	scor += Number(document.forms["test"]["i" + i].value);
+  }
+  nume = document.forms["test"]["nume"].value;
+  nume = nume.toUpperCase();
+  if (scor > 5) {
+	mesaj = "ai obtinut " + scor + " puncte";
+  } else {
+	mesaj = "ai obtinut " + scor + " puncte, mai incearca";
+  }
+ // alert(nume + ", " + mesaj);
+  document.forms["test"]["raspuns"].value=mesaj;
+  return true;
+} 
+	</script>
+        <form name="test" onsubmit="return validate()">
+			<table>
+			
+			<tr><td>
+			<input type="text" size="40" name="nume" />
+			</td></tr>
+			
+			<tr><td class="td">
+            portul pentru https este
+			</td></tr>
+			<tr><td>
+            <input type="radio" value="1" name="i1" /> 443
+			</td></tr>
+			<tr><td>
+            <input type="radio" value="0" name="i1" /> 445
+			</td></tr>
+			<tr><td>
+			</td></tr>
+			
+			<tr><td class="td">
+            vulnerabilitati de tip sql injection pot fi folosite pentru
+			</td></tr>
+			<tr><td>
+            <input type="radio" value="0" name="i2" /> securizarea bazelor de date
+			</td></tr>
+			<tr><td>
+            <input type="radio" value="1" name="i2" /> acces neautorizat la date
+			</td></tr>
+			<tr><td>
+			</td></tr>
+			
+			<tr><td class="td">
+            cand putem raspunde cu da sau nu la intrebarea daca o aplicatie web este sigura?
+			</td></tr>
+			<tr><td>
+            <input type="radio" value="0" name="i3" /> dupa ce am tesat cu un scanner de vulnerabilitati
+			</td></tr>
+			<tr><td>
+            <input type="radio" value="0" name="i3" /> dupa ce am tinut cont de toate recomandarile existente si vulnerabilitatile cunoscute
+			</td></tr>
+			<tr><td>
+			<input type="radio" value="1" name="i3" /> nu se poate raspunde
+			</td></tr>
+			
+			<tr><td class="td">
+            php este
+			</td></tr>
+			<tr><td>
+            <input type="radio" value="0" name="i4" /> un limbaj de programare compilat
+			</td></tr>
+			<tr><td>
+            <input type="radio" value="1" name="i4" /> un acronim recursiv
+			</td></tr>
+			
+			
+			<tr><td class="td">
+            documentele asp sunt
+			</td></tr>
+			<tr><td>
+            <input type="radio" value="0" name="i5" /> urgente si trebuie executate "As Soon as Possible"
+			</td></tr>
+			<tr><td>
+            <input type="radio" value="1" name="i5" /> documente Active Server Page
+			</td></tr>
+			
+			<tr><td class="td">
+            alegeti metoda prin care formularele pot fi trimise catre server
+			</td></tr>
+			<tr><td>
+            <input type="radio" value="1" name="i6" /> POST
+			</td></tr>
+			<tr><td>
+            <input type="radio" value="0" name="i6" /> HEAD
+			</td></tr>
+						
+			<tr><td class="td">
+            protocolul smtp este folosit pentru
+			</td></tr>
+			<tr><td>
+            <input type="radio" value="0" name="i7" /> citirea mesajelor email
+			</td></tr>
+			<tr><td>
+            <input type="radio" value="1" name="i7" /> trimiterea mesajelor email
+			</td></tr>
+			
+			
+			<tr><td class="td">
+            codul php se executa
+			</td></tr>
+			<tr><td>
+            <input type="radio" value="0" name="i8" /> in browser
+			</td></tr>
+			<tr><td>
+            <input type="radio" value="1" name="i8" /> pe server
+			</td></tr>
+			<tr><td>
+			</td></tr>
+			
+			<tr><td class="td">
+            de ce folosirea componentelor externe (ex. jquery) poate prezenta un risc de securitate?
+			</td></tr>
+			<tr><td>
+            <input type="radio" value="1" name="i9" /> poate avea vulnerabilitati inca necunoscute
+			</td></tr>
+			<tr><td>
+            <input type="radio" value="0" name="i9" /> sunt functii scrise in php
+			</td></tr>
+			<tr><td>
+			</td></tr>
+			
+			<tr><td class="td">
+            testarea unei aplicatii se face inainte de lansare?
+			</td></tr>
+			<tr><td>
+            <input type="radio" value="1" name="i10" /> da
+			</td></tr>
+			<tr><td>
+            <input type="radio" value="0" name="i10" /> nu
+			</td></tr>
+			<tr><td>Punctaj <input type="test" name ="raspuns" size="80" readonly />
+			</td></tr>
+			<tr><td>
+			<input type="button" value="Trimite" onclick="return validate()"/>
+			</td></tr>
+			
+			</table>
+        </form>
+    </body>
+</html>

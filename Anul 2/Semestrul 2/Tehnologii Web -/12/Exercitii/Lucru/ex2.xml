@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<exemplu>
+Un exemplu de creare a unui tabel in HTML:
+<![CDATA[
+ <table align=”center”>
+ <tr>
+ <td>Coloana 1</td>
+ <td>Coloana 2</td>
+ </tr>
+ </table>
+]]>;
+</exemplu>
