@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Example of CSS3 Infinite Translate Animation</title>
+<style type="text/css">
+    .box {
+		margin: 50px;
+        width:103px;
+        height:130px;
+        background: url("p1.png") no-repeat;
+        position: relative;
+        /* Chrome, Safari, Opera */
+        -webkit-animation: repeatit 2s linear 0s infinite alternate;
+        /* Standard syntax */
+        animation: repeatit 2s linear 0s infinite alternate;
+    }
+     
+    /* Chrome, Safari, Opera */
+    @-webkit-keyframes repeatit {
+        from {left: 0;}
+        to {left: 50%;}
+    }
+     
+    /* Standard syntax */
+    @keyframes repeatit {
+        from {left: 0;}
+        to {left: 50%;}
+    }
+</style>
+</head>
+<body>
+    <div class="box"></div>
+</body>
+</html>    

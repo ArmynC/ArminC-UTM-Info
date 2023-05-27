@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+.menu {
+  float: left;
+  width: 20%;
+  text-align: center;
+}
+
+.menu a {
+  background-color: #e5e5e5;
+  padding: 8px;
+  margin-top: 7px;
+  display: block;
+  width: 100%;
+  color: black;
+}
+
+.main {
+  float: left;
+  width: 60%;
+  padding: 0 20px;
+}
+
+.right {
+  background-color: #e5e5e5;
+  float: left;
+  width: 20%;
+  padding: 15px;
+  margin-top: 7px;
+  text-align: center;
+}
+
+@media only screen and (max-width: 620px) {
+  /* For mobile phones: */
+  .right, .menu, .main {
+    width: 100%;
+  }
+}
+</style>
+</head>
+<body style="font-family:Verdana;color:#aaaaaa;">
+
+<div style="background-color:#e5e5e5;padding:15px;text-align:center;">
+  <h1>Hello World</h1>
+</div>
+
+<div style="overflow:auto">
+  <div class="menu">
+    <a href="#">Link 1</a>
+    <a href="#">Link 2</a>
+    <a href="#">Link 3</a>
+    <a href="#">Link 4</a>
+  </div>
+
+  <div class="main">
+    <h2>Vizualizare</h2>
+    <p>Pe un port de vizualizare îngust, site-ul se afișează pe ecranele mici, spațiul de afișare a textului nu este suficient de mare încât setările de formatare (heading-uri, bold-uri, liste, tabele etc) să se afișeze corect.
+Pentru un port de vizualizare mare, deși chiar daca am setat ca textul să se centreze și să nu se afișeze pe rânduri foarte lungi, trebuie stiut ca, vizitatorul se află la distanță de ecran si, exista riscul ca textul cu un font 14 sau 16 să nu se poată citi.
+Trebuie realizata o adaptare  dimensiunii textului pentru ecranul pe care este afișat. Se recomanda marirea textului din anumite zone, pentru ca acestea sa fie evidentiate.
+</p>
+  </div>
+
+  <div class="right">
+    <h2>About</h2>
+    <p>Responsive Web Design is about using HTML and CSS to automatically resize, hide, shrink, or enlarge, a website, to make it look good on all devices (desktops, tablets, and phones):.</p>
+  </div>
+</div>
+
+<div style="background-color:#e5e5e5;text-align:center;padding:10px;margin-top:7px;">Mesaj</div>
+
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Chat App</title>
+  </head>
+  <body>
+    <div id="messages"></div>
+    <form id="message-form">
+      <input type="text" id="message-input" placeholder="Type your message here">
+      <button type="submit">Send</button>
+    </form>
+    
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+      const socket = io();
+      
+      const messageForm = document.getElementById('message-form');
+      const messageInput = document.getElementById('message-input');
+      const messagesDiv = document.getElementById('messages');
+      
+      messageForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const message = messageInput.value;
+        if (message) {
+          socket.emit('chat message', message);
+          messageInput.value = '';
+        }
+      });
+      
+      socket.on('chat message', (message) => {
+        const messageDiv = document.createElement('div');
+        messageDiv.textContent = message;
+        messagesDiv.appendChild(messageDiv);
+      });
+    </script>
+  </body>
+</html>

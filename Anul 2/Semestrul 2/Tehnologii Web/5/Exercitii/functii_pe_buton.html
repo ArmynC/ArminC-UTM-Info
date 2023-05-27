@@ -1,0 +1,29 @@
+<!DOCTYPE html><html>
+	<head>
+	<title> Prima pagina </title>
+	<link rel = "stylesheet" href = "style/style.css" type = "text/css">
+		<script>
+			i=0;
+ 			function f1()
+			{
+				i++;
+				document.f.b1.value = "Ati apasa de " + i + " ori";
+				if(i>3)
+						{
+							document.f.t1.disabled = "true";
+						}
+				document.f.t1.focus();
+			}
+			function f2()
+			{
+				i=0;
+				document.f.b1.value = "Buton neapasat";
+				document.f.t1.value = "";
+				document.f.t1.dispose;
+			}
+	</script>	</head>	<body>		<form name = "f">
+	<input type="text" name = "t1"/>
+	<input type="button" name = "b1" value = "Buton neapasat Functia f1" onclick="f1()"/>
+	<input type="button" name = "b2" value = "Reset Functia F2" onclick="f2()"/>
+	<input type="reset" value="RESETEAZA CU ..."/>
+	</form>	</body></html>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<carti>
+ <titlu titlul="Poezii" id="1">
+  <autor nume="Mihai Eminescu" />
+  <text>Luceafarul</text>
+  <pret suma="10.1"></pret>
+ </titlu>
+ <titlu titlul="Padurea spanzuratilor" id="2">
+  <autor nume="Liviu Rebreanu" />
+  <text>Text 1</text>
+  <pret suma="20.0" />
+ </titlu>
+</carti>

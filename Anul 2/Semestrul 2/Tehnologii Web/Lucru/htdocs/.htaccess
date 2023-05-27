@@ -1,0 +1,32 @@
+# Seteaza fisierele care vor fi afisate ca index in cazul in care nu este specificat un fisier in URL
+DirectoryIndex login.php hub.php
+
+# Nu permite nimanui sa citeasca fisierul .htaccess
+<Files .htaccess>
+deny from all
+</Files>
+
+# Interzice afisarea continutului unui director
+Options All -Indexes
+
+# Ascunde aceasta lista de fisiere atunci cand se afiseaza continutul unui director
+IndexIgnore .htaccess */.??* *~ *# */HEADER* */README* */_vti*
+
+# Dezactiveaza semnatura serverului - performanta
+ServerSignature Off
+
+# Redirectioneaza URL-urile de la www la non-www
+Options +FollowSymLinks
+RewriteEngine On
+RewriteCond %{HTTP_HOST} ^www\.website\.com$ [NC]
+RewriteRule ^.*$ http://website.com%{REQUEST_URI} [R=301,L]
+RewriteBase /
+
+# Blocheaza incercarile comune de exploatare
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteCond %{QUERY_STRING} (\<|%3C).*script.*(\>|%3E) [NC,OR]
+    RewriteCond %{QUERY_STRING} GLOBALS(=|\[|\%[0-9A-Z]{0,2}) [OR]
+    RewriteCond %{QUERY_STRING} _REQUEST(=|\[|\%[0-9A-Z]{0,2})
+    RewriteRule ^(.*)$ - [F,L]
+</IfModule>

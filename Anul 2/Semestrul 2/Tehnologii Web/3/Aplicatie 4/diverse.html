@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style> 
+div
+{
+width:100px;
+height:100px;
+background:red;
+-webkit-animation:anim 5s; /* Chrome, Safari, Opera */
+animation:anim 5s;
+}
+/* Chrome, Safari, Opera */
+@-webkit-keyframes anim
+{
+from {background:red;}
+to {background:#ffffff;}
+}
+/* Standard syntax */
+div
+@keyframes anim
+{
+from {background:red;}
+to {background:#ffffff;}
+}
+</style>
+</head>
+<body>
+<div>
+</div>
+</body>
+</html>

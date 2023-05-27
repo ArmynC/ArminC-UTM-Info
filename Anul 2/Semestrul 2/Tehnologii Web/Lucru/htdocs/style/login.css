@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap');
+
+*{
+	font-family: 'Poppins', sans-serif;
+}
+
+body {
+	background-color: #f2f2f2;
+}
+.container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	height: 100vh;
+}
+.login-box {
+	background-color: #fff;
+	border-radius: 10px;
+	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+	padding: 40px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	max-width: 400px;
+	width: 100%;
+}
+.login-box h1 {
+	font-size: 2rem;
+	margin-bottom: 20px;
+}
+.login-box label {
+	font-size: 1.2rem;
+	margin-bottom: 10px;
+	display: block;
+	text-align: left;
+	width: 100%;
+}
+.login-box input[type="text"], .login-box input[type="password"] {
+	width: 100%;
+	padding: 10px;
+	border-radius: 5px;
+	border: none;
+	margin-bottom: 20px;
+	box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+}
+.login-box input[type="submit"] {
+	border: none;
+	outline: none;
+	height: 40px;
+	background: #14DC2F;
+	color: #fff;
+	font-size: 18px;
+	border-radius: 20px;
+	cursor: pointer;
+	transition: all 0.3s ease-in-out;
+	width: 100%;
+	max-width: 200px;
+}
+.login-box input[type="submit"]:hover {
+	background: #ffe30d;
+	color: #000;
+	transform: scale(1.1);
+}
+.login-box a {
+	text-decoration: none;
+	font-size: 1rem;
+	color: #000;
+	margin-top: 20px;
+	transition: all 0.3s ease-in-out;
+}
+.login-box a:hover {
+	color: #14DC2F;
+}
+
+.error {
+	color: #ff0000;
+	font-size: 1.1rem;
+	margin-bottom: 20px;
+}

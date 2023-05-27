@@ -1,0 +1,25 @@
+body {
+	background-image:url(desert.jpg);
+	background-blend-mode:multiply;
+}
+
+.main {
+margin-left:25%;
+margin-right:25%;
+border:2px solid black;
+border-radius:8px;
+padding:10px;	
+
+}
+#nume {
+	border-radius:0px;
+}
+button {
+	margin-left:15%;
+	margin-top:5%;
+	margin-bottom:2%;
+}
+
+.a {
+	margin-right:25%;margin-left:25%; width:50%; margin-top:5%;
+}

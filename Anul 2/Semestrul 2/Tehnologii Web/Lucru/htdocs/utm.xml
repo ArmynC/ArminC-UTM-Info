@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+<rss version="2.0">
+    <channel>
+    <title>Universitatea Titu Maiorescu</title>
+    <description>Facultatea de Informatica</description> 
+     <link>http://www.utm.ro</link> 
+     <language>ro</language> 
+      <item>
+      <title><![CDATA[ Informatii Secretariat ]]> </title>
+      <description><![CDATA[ Universitatea Titu Maiorescu Facultatea de informatica Anul II ZI]]>
+ 	</description>
+       <link><![CDATA[  https://www.utm.ro/facultatea-de-informatica/informatii-de-secretariat/]]>
+ 	</link>   
+	 </item>
+       <item>
+        <title><![CDATA[  Noutati ]]> </title>
+        <description><![CDATA[  Facultatea de Informatica a fost ]]> </description> 
+         <link><![CDATA[  https://www.utm.ro/facultatea-de-informatica/noutati/]]>
+ 		</link> 
+		</item>
+        <item>
+          <title><![CDATA[  Avizier ]]></title>
+          <description><![CDATA[  Facultatea de informatica cu sprijinul ]]> 
+		</description>
+           <link><![CDATA[  https://www.utm.ro/facultatea-de-informatica/avizier-studii-zi/]]>
+ 		</link>
+          	</item>
+    	</channel>
+	</rss>

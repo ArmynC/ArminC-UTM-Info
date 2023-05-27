@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script> $(document).ready(function () { $("#actiune").click(function () { $("#panel").slideUp("slow"); }); });</script>
+    <style type="text/css">
+        #panel,
+        #actiune {
+            padding: 5px;
+            text-align: center;
+            background-color: #e5eecc;
+            border: solid 1px #c3c3c3;
+        }
+
+        #panel {
+            padding: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="actiune">Actiune pentru down panel</div>
+    <div id="panel">
+        <p>Studii de licenta<br> Masterat<br>Doctorat</p>
+    </div>
+</body>
+
+</html>

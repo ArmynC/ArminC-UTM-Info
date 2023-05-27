@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE MAIL SYSTEM "MAIL.DTD">
+<MAIL id="10" date="10-05-2021">
+<FROM>nume_prof@prof.utm.ro</FROM>
+<TO>student@s.utm.ro</TO>
+<SUBJECT>Hello</SUBJECT>
+<MESSAGE>
+Hello Student
+</MESSAGE>
+</MAIL>
