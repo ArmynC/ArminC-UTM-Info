@@ -53,7 +53,7 @@
 * [Etica profesionala si proprietate intelectuala](https://github.com/ArmynC/ArminC-UTM-Info/tree/main/Anul%202/Semestrul%201/Educatie%20fizica)
 * [Fiabilitatea si testarea aplicatiilor software](https://github.com/ArmynC/ArminC-UTM-Info/tree/main/Anul%202/Semestrul%202/Fiabilitatea%20si%20testarea%20aplicatiilor%20software) - **Docker, ALM, Eiffel, RSM, Selenium**
 * [Metode avansate de programare](https://github.com/ArmynC/ArminC-UTM-Info/tree/main/Anul%202/Semestrul%202/Metode%20avansate%20de%20programare) - **Java**
-* [Tehnologii Web](https://github.com/ArmynC/ArminC-UTM-Info/tree/main/Anul%202/Semestrul%202/Tehnologii%20Web) - **HTML, CSS, PHP, JS, XML+**
+* [Tehnologii Web](https://github.com/ArmynC/ArminC-UTM-Info/tree/main/Anul%202/Semestrul%202/Tehnologii%20Web) - **HTML, CSS, PHP, JS, XML**
 
 
 **Anul 3**
