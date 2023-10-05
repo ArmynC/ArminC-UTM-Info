@@ -1,0 +1,118 @@
+<mxfile host="app.diagrams.net" modified="2023-10-05T10:06:49.085Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/119.0" etag="Vl9GtMAf9_sfilD7yCeP" version="22.0.2" type="device">
+  <diagram name="Page-1" id="CP9mF5vaw79NC4sRmtAB">
+    <mxGraphModel dx="1320" dy="673" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="CWAiafIRDo6PzvtOG_5g-16" value="" style="verticalLabelPosition=bottom;verticalAlign=top;html=1;shape=mxgraph.basic.rect;fillColor2=none;strokeWidth=1;size=20;indent=5;fillColor=none;absoluteCornerSize=0;" vertex="1" parent="1">
+          <mxGeometry x="250" y="40" width="320" height="450" as="geometry" />
+        </mxCell>
+        <mxCell id="CWAiafIRDo6PzvtOG_5g-2" value="Angajat" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="655" y="100" width="30" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="CWAiafIRDo6PzvtOG_5g-3" value="&lt;b&gt;&lt;font color=&quot;#ff00ff&quot;&gt;Actor&lt;/font&gt;&lt;/b&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="50" y="120" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="CWAiafIRDo6PzvtOG_5g-5" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.58;exitY=0.934;exitDx=0;exitDy=0;exitPerimeter=0;fillColor=#e1d5e7;strokeColor=#9673a6;" edge="1" parent="1" source="CWAiafIRDo6PzvtOG_5g-3">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="80" y="160" as="sourcePoint" />
+            <mxPoint x="120" y="180" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="CWAiafIRDo6PzvtOG_5g-6" value="Sistem Bibliotecă" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=1;fontFamily=Lucida Console;" vertex="1" parent="1">
+          <mxGeometry x="340" y="70" width="130" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="CWAiafIRDo6PzvtOG_5g-7" value="Verificare abonament" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=0" vertex="1" parent="1">
+          <mxGeometry x="380" y="185" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="CWAiafIRDo6PzvtOG_5g-8" value="Titlu comandat" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="355" y="320" width="105" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="CWAiafIRDo6PzvtOG_5g-9" value="Plată servicii" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="357.5" y="410" width="105" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="CWAiafIRDo6PzvtOG_5g-11" value="" style="ellipse;whiteSpace=wrap;html=1;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="340" y="310" width="140" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="CWAiafIRDo6PzvtOG_5g-13" value="" style="ellipse;whiteSpace=wrap;html=1;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="355" y="400" width="110" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="CWAiafIRDo6PzvtOG_5g-17" value="&lt;font color=&quot;#ff00ff&quot;&gt;&lt;b&gt;Boundary&lt;/b&gt;&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="110" y="20" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="CWAiafIRDo6PzvtOG_5g-19" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.58;exitY=0.934;exitDx=0;exitDy=0;exitPerimeter=0;fillColor=#e1d5e7;strokeColor=#9673a6;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="180" y="38" as="sourcePoint" />
+            <mxPoint x="240" y="50" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="CWAiafIRDo6PzvtOG_5g-20" value="" style="endArrow=classic;html=1;rounded=0;fillColor=#e1d5e7;strokeColor=#9673a6;entryX=0.625;entryY=0.3;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="640" y="60" as="sourcePoint" />
+            <mxPoint x="450" y="180" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="CWAiafIRDo6PzvtOG_5g-22" value="&lt;font color=&quot;#ff00ff&quot;&gt;&lt;b&gt;Use case&lt;br&gt;&lt;/b&gt;&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="640" y="30" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="CWAiafIRDo6PzvtOG_5g-24" value="Client" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="140" y="180" width="30" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="CWAiafIRDo6PzvtOG_5g-29" value="Supervizor" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="1">
+          <mxGeometry x="670" y="270" width="30" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="CWAiafIRDo6PzvtOG_5g-36" value="" style="endArrow=none;html=1;rounded=0;entryX=-0.036;entryY=0.374;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="CWAiafIRDo6PzvtOG_5g-24" target="CWAiafIRDo6PzvtOG_5g-44">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="310" y="250" as="sourcePoint" />
+            <mxPoint x="360" y="200" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="CWAiafIRDo6PzvtOG_5g-39" value="" style="endArrow=none;html=1;rounded=0;" edge="1" parent="1" source="CWAiafIRDo6PzvtOG_5g-24">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="300" y="420" as="sourcePoint" />
+            <mxPoint x="350" y="420" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="CWAiafIRDo6PzvtOG_5g-45" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="CWAiafIRDo6PzvtOG_5g-42" target="CWAiafIRDo6PzvtOG_5g-44">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="CWAiafIRDo6PzvtOG_5g-42" value="" style="ellipse;whiteSpace=wrap;html=1;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="362.5" y="170" width="95" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="CWAiafIRDo6PzvtOG_5g-44" value="Împrumut" style="ellipse;whiteSpace=wrap;html=1;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="355" y="240" width="110" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="CWAiafIRDo6PzvtOG_5g-47" value="" style="endArrow=none;html=1;rounded=0;exitX=1.041;exitY=0.375;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="CWAiafIRDo6PzvtOG_5g-42" target="CWAiafIRDo6PzvtOG_5g-2">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="470" y="200" as="sourcePoint" />
+            <mxPoint x="520" y="210" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="CWAiafIRDo6PzvtOG_5g-49" value="" style="endArrow=none;html=1;rounded=0;" edge="1" parent="1" target="CWAiafIRDo6PzvtOG_5g-2">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="480" y="320" as="sourcePoint" />
+            <mxPoint x="530" y="270" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="CWAiafIRDo6PzvtOG_5g-50" value="" style="endArrow=none;html=1;rounded=0;" edge="1" parent="1" target="CWAiafIRDo6PzvtOG_5g-2">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="470" y="420" as="sourcePoint" />
+            <mxPoint x="520" y="370" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="CWAiafIRDo6PzvtOG_5g-52" value="" style="endArrow=none;html=1;rounded=0;" edge="1" parent="1" target="CWAiafIRDo6PzvtOG_5g-29">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="480" y="350" as="sourcePoint" />
+            <mxPoint x="530" y="300" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="CWAiafIRDo6PzvtOG_5g-53" value="" style="endArrow=none;html=1;rounded=0;" edge="1" parent="1" target="CWAiafIRDo6PzvtOG_5g-29">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="470" y="430" as="sourcePoint" />
+            <mxPoint x="520" y="380" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
